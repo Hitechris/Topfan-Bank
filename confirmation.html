@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Transfer Successful – Topfan Bank</title>
-  <link rel="stylesheet" href="transfer.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transfer Confirmation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      padding: 30px;
+      color: #333;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .card h2 {
+      color: green;
+    }
+  </style>
 </head>
 <body>
-  <div class="confirmation">
-    <h1>✅ Transfer Successful</h1>
-    <p id="confirmedAmount">You successfully transferred $0.00</p>
-    <a href="dashboard.html" class="btn-back">Back to Dashboard</a>
+
+  <div class="card">
+    <h2>✅ Transfer Successful</h2>
+    <p><strong>From:</strong> <span id="from"></span></p>
+    <p><strong>To:</strong> <span id="to"></span></p>
+    <p><strong>Account #:</strong> <span id="accNum"></span></p>
+    <p><strong>Amount:</strong> $<span id="amount"></span></p>
   </div>
 
-
   <script>
-  const params = new URLSearchParams(window.location.search);
-  const amount = params.get('amount');
+    const query = new URLSearchParams(window.location.search);
 
-  if (amount) {
-    document.getElementById("confirmedAmount").textContent =
-      `You successfully transferred ${amount}`;
-  }
-</script>
+    document.getElementById("from").textContent = query.get("from");
+    document.getElementById("to").textContent = query.get("to");
+    document.getElementById("accNum").textContent = query.get("accNum");
+    document.getElementById("amount").textContent = parseFloat(query.get("amount")).toFixed(2);
+  </script>
+
 </body>
 </html>

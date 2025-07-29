@@ -1,3 +1,4 @@
+<!-- transfer.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,79 +8,97 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 20px;
-      background: #f9f9f9;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-    label {
-      font-weight: bold;
-      margin-top: 10px;
-      display: block;
+    .transfer-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    .transfer-box h2 {
+      margin-bottom: 20px;
+      text-align: center;
     }
     input, select {
       width: 100%;
-      padding: 10px;
-      margin-top: 5px;
+      padding: 12px;
       margin-bottom: 15px;
       border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 6px;
     }
     button {
-      width: 100%;
-      padding: 12px;
-      background-color: #004aad;
+      background: #28a745;
       color: white;
-      font-size: 16px;
       border: none;
-      border-radius: 5px;
+      padding: 12px;
+      width: 100%;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #218838;
     }
   </style>
 </head>
 <body>
+  <div class="transfer-box">
+    <h2>Transfer Funds</h2>
+    <form id="transferForm">
+      <label>From Account</label>
+      <select id="fromAccount" required>
+        <option value="Checking Account">Checking Account</option>
+        <option value="Savings Account">Savings Account</option>
+      </select>
 
-  <h2>Transfer Money</h2>
-  <form id="transferForm">
-    <label for="fromAccount">From Account:</label>
-    <select id="fromAccount">
-      <option value="Checking Account">Checking Account</option>
-      <option value="Savings Account">Savings Account</option>
-    </select>
+      <label>Recipient Name</label>
+      <input type="text" id="recipientName" required />
 
-    <label for="recipientName">Recipient Name:</label>
-    <input type="text" id="recipientName" placeholder="Enter recipient's name" required>
+      <label>Account Number</label>
+      <input type="text" id="recipientAccount" required />
 
-    <label for="recipientAccount">Recipient Account #:</label>
-    <input type="text" id="recipientAccount" placeholder="Enter account number" required>
+      <label>Amount ($)</label>
+      <input type="number" id="amount" step="0.01" required />
 
-    <label for="amount">Amount ($):</label>
-    <input type="number" id="amount" placeholder="Enter amount" required>
-
-    <button type="submit">Send Transfer</button>
-  </form>
+      <button type="submit">Transfer</button>
+    </form>
+  </div>
 
   <script>
-    document.getElementById("transferForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // Stop default form submission
+    document.getElementById("transferForm").addEventListener("submit", function(e) {
+      e.preventDefault();
 
       const from = document.getElementById("fromAccount").value;
       const to = document.getElementById("recipientName").value;
       const accNum = document.getElementById("recipientAccount").value;
       const amount = document.getElementById("amount").value;
 
-      if (!to || !accNum || !amount) {
-        alert("Please fill in all fields.");
-        return;
-      }
+      // Generate random transaction ID
+      const txnId = "TXN" + Math.floor(100000000 + Math.random() * 900000000);
 
+      // Format current date and time
+      const now = new Date();
+      const transferDate = now.toLocaleString();
+
+      // Redirect with parameters
       const params = new URLSearchParams({
         from: from,
         to: to,
         accNum: accNum,
-        amount: amount
+        amount: amount,
+        txnId: txnId,
+        date: transferDate
       });
 
-      window.location.href = `confirmation.html?${params.toString()}`;
+      window.location.href = "confirmation.html?" + params.toString();
     });
   </script>
-
 </body>
 </html>

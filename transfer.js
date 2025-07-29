@@ -7,12 +7,16 @@ document.getElementById('transferForm').addEventListener('submit', function(e) {
     alert("Amount must be more than 0.");
     return;
   }
+// Redirect to confirmation page
+const from = document.getElementById('from').value;
+const to = document.getElementById('to').value;
+const accNum = document.getElementById('accNum').value;
 
-  // Show success
-  const confirmation = document.getElementById('confirmation');
-  confirmation.classList.remove('hidden');
-  confirmation.textContent = `✅ Transfer of $${parseFloat(amount).toFixed(2)} was successful!`;
-
-  // Clear form (optional)
-  this.reset();
+const params = new URLSearchParams({
+  from: from,
+  to: to,
+  accNum: accNum,
+  amount: amount
 });
+
+window.location.href = `confirmation.html?${params.toString()}`;

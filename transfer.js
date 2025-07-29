@@ -1,6 +1,6 @@
 document.getElementById('transferForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  
+
   // Basic validation (you can add more)
   const amount = document.getElementById('amount').value;
   if (parseFloat(amount) <= 0) {
@@ -9,7 +9,9 @@ document.getElementById('transferForm').addEventListener('submit', function(e) {
   }
 
   // Show success
-  document.getElementById('confirmation').classList.remove('hidden');
+  const confirmation = document.getElementById('confirmation');
+  confirmation.classList.remove('hidden');
+  confirmation.textContent = `✅ Transfer of $${parseFloat(amount).toFixed(2)} was successful!`;
 
   // Clear form (optional)
   this.reset();

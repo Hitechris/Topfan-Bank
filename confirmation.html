@@ -2,49 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Transfer Successful - Topfan Bank</title>
+  <title>Transfer Successful – Topfan Bank</title>
   <link rel="stylesheet" href="transfer.css">
-  <style>
-    .confirmation {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-      background: #f9f9f9;
-    }
-
-    .confirmation h1 {
-      color: #4CAF50;
-      font-size: 2.5rem;
-    }
-
-    .confirmation p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      color: #444;
-    }
-
-    .confirmation a {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-
-    .confirmation a:hover {
-      background-color: #388e3c;
-    }
-  </style>
 </head>
 <body>
   <div class="confirmation">
-    <h1>✅ Transfer Successful!</h1>
-    <p>Your money has been transferred successfully.</p>
-    <a href="index.html">Return to Dashboard</a>
+    <h1>✅ Transfer Successful</h1>
+    <p id="confirmedAmount">You successfully transferred $0.00</p>
+    <a href="dashboard.html" class="btn-back">Back to Dashboard</a>
   </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const amount = params.get('amount');
+    document.getElementById("confirmedAmount").textContent = `You successfully transferred $${amount}`;
+  </script>
 </body>
 </html>

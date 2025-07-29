@@ -1,3 +1,4 @@
+<!-- confirmation.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,31 +8,43 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f0f0f0;
-      padding: 30px;
-      color: #333;
+      background: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-    .card {
+    .confirmation-box {
       background: white;
-      padding: 20px;
-      border-radius: 8px;
-      max-width: 500px;
-      margin: auto;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: left;
+      max-width: 400px;
+      width: 100%;
     }
-    .card h2 {
+    .confirmation-box h2 {
       color: green;
+      margin-bottom: 20px;
+    }
+    .confirmation-box p {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    strong {
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-
-  <div class="card">
+  <div class="confirmation-box">
     <h2>✅ Transfer Successful</h2>
     <p><strong>From:</strong> <span id="from"></span></p>
     <p><strong>To:</strong> <span id="to"></span></p>
     <p><strong>Account #:</strong> <span id="accNum"></span></p>
     <p><strong>Amount:</strong> $<span id="amount"></span></p>
+    <p><strong>Transaction ID:</strong> <span id="txnId"></span></p>
+    <p><strong>Date:</strong> <span id="date"></span></p>
   </div>
 
   <script>
@@ -41,7 +54,8 @@
     document.getElementById("to").textContent = query.get("to");
     document.getElementById("accNum").textContent = query.get("accNum");
     document.getElementById("amount").textContent = parseFloat(query.get("amount")).toFixed(2);
+    document.getElementById("txnId").textContent = query.get("txnId");
+    document.getElementById("date").textContent = query.get("date");
   </script>
-
 </body>
 </html>

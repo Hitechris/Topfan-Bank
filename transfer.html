@@ -7,144 +7,161 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      background: #f1f1f1;
+      margin: 0;
       padding: 20px;
     }
-    form {
+    .container {
       max-width: 600px;
       margin: auto;
-      background: #fff;
+      background: white;
       padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    h2 {
+      text-align: center;
     }
     label {
       display: block;
       margin-top: 15px;
+      font-weight: bold;
     }
     input, select, button {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
-      border-radius: 4px;
+      border-radius: 5px;
       border: 1px solid #ccc;
     }
     .btn-group {
-      margin-top: 20px;
       display: flex;
       justify-content: space-between;
+      margin-top: 20px;
     }
-    button {
+    .btn-group a, .btn-group button {
       width: 48%;
       background-color: #007BFF;
       color: white;
+      text-align: center;
+      text-decoration: none;
       border: none;
+      padding: 10px;
+      border-radius: 5px;
       cursor: pointer;
     }
-    button:hover {
+    .btn-group a:hover, .btn-group button:hover {
       background-color: #0056b3;
     }
   </style>
 </head>
 <body>
-
-  <form id="transferForm">
+  <div class="container">
     <h2>Transfer Money</h2>
+    <form action="confirmation.html" method="GET">
+      <label for="fromAccount">From Account</label>
+      <select id="fromAccount" name="fromAccount" required>
+        <option value="">Select Account</option>
+        <option value="Checking">Checking Account</option>
+        <option value="Savings">Savings Account</option>
+      </select>
 
-    <label for="fromAccount">From Account</label>
-    <select id="fromAccount" name="fromAccount" required>
-      <option value="">Select</option>
-      <option value="Checking">Checking</option>
-      <option value="Savings">Savings</option>
-    </select>
+      <label for="recipientName">Recipient Name</label>
+      <input type="text" id="recipientName" name="recipientName" required>
 
-    <label for="recipient">Recipient Name</label>
-    <input type="text" id="recipient" name="recipient" required />
+      <label for="accountNumber">Account Number</label>
+      <input type="text" id="accountNumber" name="accountNumber" required>
 
-    <label for="accountNumber">Account Number</label>
-    <input type="text" id="accountNumber" name="accountNumber" required />
+      <label for="routingNumber">Routing Number</label>
+      <input type="text" id="routingNumber" name="routingNumber" required>
 
-    <label for="routingNumber">Routing Number</label>
-    <input type="text" id="routingNumber" name="routingNumber" required />
+      <label for="amount">Amount</label>
+      <input type="number" id="amount" name="amount" step="0.01" required>
 
-    <label for="amount">Amount</label>
-    <input type="number" id="amount" name="amount" step="0.01" required />
+      <label for="country">Country</label>
+      <select id="country" name="country" required>
+        <option value="">Select Country</option>
+      </select>
 
-    <label for="country">Country</label>
-    <select id="country" name="country" required></select>
+      <label for="state">State</label>
+      <select id="state" name="state" required>
+        <option value="">Select State</option>
+      </select>
 
-    <label for="state">State</label>
-    <select id="state" name="state" required></select>
+      <label for="city">City</label>
+      <select id="city" name="city" required>
+        <option value="">Select City</option>
+      </select>
 
-    <label for="city">City</label>
-    <select id="city" name="city" required></select>
-
-    <div class="btn-group">
-      <button type="button" onclick="location.href='index.html'">Back</button>
-      <button type="submit">Submit</button>
-    </div>
-  </form>
+      <div class="btn-group">
+        <a href="index.html">Back to Home</a>
+        <button type="submit">Continue</button>
+      </div>
+    </form>
+  </div>
 
   <script>
-    const data = {
-      "United States": {
-        "California": ["Los Angeles", "San Francisco", "San Diego"],
-        "Texas": ["Houston", "Dallas", "Austin"],
-        "Florida": ["Miami", "Orlando", "Tampa"]
-      },
-      "Canada": {
-        "Ontario": ["Toronto", "Ottawa", "Hamilton"],
-        "Quebec": ["Montreal", "Quebec City"],
-        "British Columbia": ["Vancouver", "Victoria"]
-      },
-      "Brazil": {
-        "São Paulo": ["São Paulo", "Campinas"],
-        "Rio de Janeiro": ["Rio", "Niterói"]
-      }
+    const countries = ["United States", "Canada", "Brazil", "Germany", "India", "France", "Japan", "Mexico", "Nigeria", "United Kingdom"];
+    const statesByCountry = {
+      "United States": ["California", "Texas", "Florida", "New York", "Illinois"],
+      "Canada": ["Ontario", "Quebec", "British Columbia", "Alberta"],
+      "Brazil": ["São Paulo", "Rio de Janeiro", "Bahia", "Minas Gerais"],
+      "Germany": ["Bavaria", "Berlin", "Saxony", "Hesse"],
+      "India": ["Maharashtra", "Delhi", "Karnataka", "Tamil Nadu"],
+      "France": ["Île-de-France", "Provence", "Normandy", "Brittany"],
+      "Japan": ["Tokyo", "Osaka", "Kyoto", "Hokkaido"],
+      "Mexico": ["Jalisco", "Mexico City", "Yucatán", "Nuevo León"],
+      "Nigeria": ["Lagos", "Abuja", "Kano", "Rivers"],
+      "United Kingdom": ["England", "Scotland", "Wales", "Northern Ireland"]
+    };
+    const citiesByState = {
+      "California": ["Los Angeles", "San Diego", "San Francisco"],
+      "Texas": ["Houston", "Dallas", "Austin"],
+      "Florida": ["Miami", "Orlando", "Tampa"],
+      "Ontario": ["Toronto", "Ottawa", "Hamilton"],
+      "São Paulo": ["São Paulo", "Campinas", "Santos"],
+      "Bavaria": ["Munich", "Nuremberg"],
+      "Maharashtra": ["Mumbai", "Pune", "Nagpur"],
+      "Île-de-France": ["Paris", "Versailles"],
+      "Tokyo": ["Shinjuku", "Shibuya", "Ueno"],
+      "Jalisco": ["Guadalajara", "Puerto Vallarta"],
+      "Lagos": ["Ikeja", "Lekki", "Yaba"],
+      "England": ["London", "Manchester", "Liverpool"]
     };
 
     const countrySelect = document.getElementById("country");
     const stateSelect = document.getElementById("state");
     const citySelect = document.getElementById("city");
 
-    function populateCountries() {
-      for (let country in data) {
-        countrySelect.innerHTML += `<option value="${country}">${country}</option>`;
-      }
-    }
-
-    function populateStates() {
-      const country = countrySelect.value;
-      stateSelect.innerHTML = `<option value="">Select State</option>`;
-      citySelect.innerHTML = `<option value="">Select City</option>`;
-      if (data[country]) {
-        for (let state in data[country]) {
-          stateSelect.innerHTML += `<option value="${state}">${state}</option>`;
-        }
-      }
-    }
-
-    function populateCities() {
-      const country = countrySelect.value;
-      const state = stateSelect.value;
-      citySelect.innerHTML = `<option value="">Select City</option>`;
-      if (data[country] && data[country][state]) {
-        data[country][state].forEach(city => {
-          citySelect.innerHTML += `<option value="${city}">${city}</option>`;
-        });
-      }
-    }
-
-    countrySelect.addEventListener("change", populateStates);
-    stateSelect.addEventListener("change", populateCities);
-
-    document.getElementById("transferForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      // You can optionally store values in localStorage/sessionStorage here
-      window.location.href = "confirmation.html";
+    countries.forEach(country => {
+      const option = document.createElement("option");
+      option.value = country;
+      option.text = country;
+      countrySelect.add(option);
     });
 
-    populateCountries();
+    countrySelect.addEventListener("change", () => {
+      stateSelect.innerHTML = '<option value="">Select State</option>';
+      citySelect.innerHTML = '<option value="">Select City</option>';
+      const states = statesByCountry[countrySelect.value] || [];
+      states.forEach(state => {
+        const option = document.createElement("option");
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+      });
+    });
+
+    stateSelect.addEventListener("change", () => {
+      citySelect.innerHTML = '<option value="">Select City</option>';
+      const cities = citiesByState[stateSelect.value] || [];
+      cities.forEach(city => {
+        const option = document.createElement("option");
+        option.value = city;
+        option.text = city;
+        citySelect.add(option);
+      });
+    });
   </script>
 </body>
 </html>

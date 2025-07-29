@@ -1,50 +1,116 @@
-unt</label>
-      <select id="fromAccount" required>
-        <option value="Checking Account">Checking Account</option>
-        <option value="Savings Account">Savings Account</option>
-      </select>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transfer Funds</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
 
-      <label>Recipient Name</label>
-      <input type="text" id="recipientName" required />
+    .transfer-container {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
 
-      <label>Account Number</label>
-      <input type="text" id="recipientAccount" required />
+    h2 {
+      margin-bottom: 25px;
+      text-align: center;
+      color: #333;
+    }
 
-      <label>Amount ($)</label>
-      <input type="number" id="amount" step="0.01" required />
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
 
-      <button type="submit">Transfer</button>
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    .btn {
+      width: 100%;
+      background-color: #28a745;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #218838;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #007bff;
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="transfer-container">
+    <h2>Transfer Funds</h2>
+    <form action="confirmation.html" method="POST">
+      <label for="fromAccount">From Account</label>
+      <input type="text" id="fromAccount" name="fromAccount" required />
+
+      <label for="recipientName">Recipient Name</label>
+      <input type="text" id="recipientName" name="recipientName" required />
+
+      <label for="accountNumber">Account Number</label>
+      <input type="text" id="accountNumber" name="accountNumber" required />
+
+      <label for="amount">Amount ($)</label>
+      <input type="number" step="0.01" id="amount" name="amount" required />
+
+      <label for="routingNumber">Routing Number</label>
+      <input type="text" id="routingNumber" name="routingNumber" required />
+
+      <label for="address">Address</label>
+      <input type="text" id="address" name="address" required />
+
+      <label for="city">City</label>
+      <input type="text" id="city" name="city" required />
+
+      <label for="state">State</label>
+      <input type="text" id="state" name="state" required />
+
+      <label for="country">Country</label>
+      <input type="text" id="country" name="country" required />
+
+      <button type="submit" class="btn">Submit Transfer</button>
     </form>
+
+    <a href="index.html" class="back-link">← Back to Home</a>
   </div>
-
-  <script>
-    document.getElementById("transferForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const from = document.getElementById("fromAccount").value;
-    const to = document.getElementById("recipientName").valu
-      const accNum = document.getElementById("recipientAccount").value;
-      const amount = document.getElementById("amount").value;
-
-      // Generate random transaction ID
-      const txnId = "TXN" + Math.floor(100000000 + Math.random() * 900000000);
-
-      // Format current date and time
-      const now = new Date();
-      const transferDate = now.toLocaleString();
-
-      // Redirect with parameters
-      const params = new URLSearchParams({
-        from: from,
-        to: to,
-        accNum: accNum,
-        amount: amount,
-        txnId: txnId,
-        date: transferDate
-      });
-
-      window.location.href = "confirmation.html?" + params.toString();
-    });
-  </script>
 </body>
 </html>

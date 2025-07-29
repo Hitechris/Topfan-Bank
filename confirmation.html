@@ -12,10 +12,15 @@
     <a href="dashboard.html" class="btn-back">Back to Dashboard</a>
   </div>
 
+
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const amount = params.get('amount');
-    document.getElementById("confirmedAmount").textContent = `You successfully transferred $${amount}`;
-  </script>
+  const params = new URLSearchParams(window.location.search);
+  const amount = params.get('amount');
+
+  if (amount) {
+    document.getElementById("confirmedAmount").textContent =
+      `You successfully transferred ${amount}`;
+  }
+</script>
 </body>
 </html>

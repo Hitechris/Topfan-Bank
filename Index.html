@@ -1,1 +1,65 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bank Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>MyBank</h2>
+      <nav>
+        <a href="#">Dashboard</a>
+        <a href="#">Transactions</a>
+        <a href="#">Transfer</a>
+        <a href="#">Profile</a>
+        <a href="#">Logout</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard">
+      <header>
+        <h1>Welcome, John Doe</h1>
+        <p>Account Overview</p>
+      </header>
+
+      <section class="cards">
+        <div class="card">
+          <h3>Account Balance</h3>
+          <p>$8,250.75</p>
+        </div>
+        <div class="card">
+          <h3>Available Credit</h3>
+          <p>$1,500.00</p>
+        </div>
+        <div class="card">
+          <h3>Monthly Expenses</h3>
+          <p>$2,300.00</p>
+        </div>
+      </section>
+
+      <section class="transactions">
+        <h2>Recent Transactions</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="transaction-list">
+            <!-- Transactions will be added by JavaScript -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

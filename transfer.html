@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Transfer Funds</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transfer Money</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      background: #f5f5f5;
       padding: 20px;
-    }
-    h2 {
-      text-align: center;
     }
     form {
-      max-width: 500px;
+      max-width: 600px;
       margin: auto;
-      background: white;
+      background: #fff;
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     label {
@@ -28,131 +26,125 @@
       width: 100%;
       padding: 10px;
       margin-top: 5px;
-      border-radius: 5px;
+      border-radius: 4px;
       border: 1px solid #ccc;
     }
+    .btn-group {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
     button {
-      background-color: #2e8b57;
+      width: 48%;
+      background-color: #007BFF;
       color: white;
+      border: none;
       cursor: pointer;
     }
     button:hover {
-      background-color: #256f46;
-    }
-    .btn-secondary {
-      background-color: #999;
-      margin-top: 10px;
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
 
-  <h2>Transfer Funds</h2>
+  <form id="transferForm">
+    <h2>Transfer Money</h2>
 
-  <form action="confirmation.html" method="GET">
     <label for="fromAccount">From Account</label>
     <select id="fromAccount" name="fromAccount" required>
-      <option value="" disabled selected>Select Account</option>
-      <option value="Checking">Checking Account</option>
-      <option value="Savings">Savings Account</option>
+      <option value="">Select</option>
+      <option value="Checking">Checking</option>
+      <option value="Savings">Savings</option>
     </select>
 
-    <label for="recipientName">Recipient Name</label>
-    <input type="text" id="recipientName" name="recipientName" required>
+    <label for="recipient">Recipient Name</label>
+    <input type="text" id="recipient" name="recipient" required />
 
     <label for="accountNumber">Account Number</label>
-    <input type="text" id="accountNumber" name="accountNumber" required>
+    <input type="text" id="accountNumber" name="accountNumber" required />
 
     <label for="routingNumber">Routing Number</label>
-    <input type="text" id="routingNumber" name="routingNumber" required>
+    <input type="text" id="routingNumber" name="routingNumber" required />
 
     <label for="amount">Amount</label>
-    <input type="number" id="amount" name="amount" step="0.01" required>
-
-    <label for="city">City</label>
-    <select id="city" name="city" required>
-      <option value="" disabled selected>Select City</option>
-      <option value="New York City">New York City</option>
-      <option value="Los Angeles">Los Angeles</option>
-      <option value="Chicago">Chicago</option>
-      <option value="Miami">Miami</option>
-      <option value="Houston">Houston</option>
-      <!-- You can add more cities as needed -->
-    </select>
-
-    <label for="state">State</label>
-    <select id="state" name="state" required>
-      <option value="" disabled selected>Select State</option>
-      <!-- All 50 US States -->
-      <option value="Alabama">Alabama</option>
-      <option value="Alaska">Alaska</option>
-      <option value="Arizona">Arizona</option>
-      <option value="Arkansas">Arkansas</option>
-      <option value="California">California</option>
-      <option value="Colorado">Colorado</option>
-      <option value="Connecticut">Connecticut</option>
-      <option value="Delaware">Delaware</option>
-      <option value="Florida">Florida</option>
-      <option value="Georgia">Georgia</option>
-      <option value="Hawaii">Hawaii</option>
-      <option value="Idaho">Idaho</option>
-      <option value="Illinois">Illinois</option>
-      <option value="Indiana">Indiana</option>
-      <option value="Iowa">Iowa</option>
-      <option value="Kansas">Kansas</option>
-      <option value="Kentucky">Kentucky</option>
-      <option value="Louisiana">Louisiana</option>
-      <option value="Maine">Maine</option>
-      <option value="Maryland">Maryland</option>
-      <option value="Massachusetts">Massachusetts</option>
-      <option value="Michigan">Michigan</option>
-      <option value="Minnesota">Minnesota</option>
-      <option value="Mississippi">Mississippi</option>
-      <option value="Missouri">Missouri</option>
-      <option value="Montana">Montana</option>
-      <option value="Nebraska">Nebraska</option>
-      <option value="Nevada">Nevada</option>
-      <option value="New Hampshire">New Hampshire</option>
-      <option value="New Jersey">New Jersey</option>
-      <option value="New Mexico">New Mexico</option>
-      <option value="New York">New York</option>
-      <option value="North Carolina">North Carolina</option>
-      <option value="North Dakota">North Dakota</option>
-      <option value="Ohio">Ohio</option>
-      <option value="Oklahoma">Oklahoma</option>
-      <option value="Oregon">Oregon</option>
-      <option value="Pennsylvania">Pennsylvania</option>
-      <option value="Rhode Island">Rhode Island</option>
-      <option value="South Carolina">South Carolina</option>
-      <option value="South Dakota">South Dakota</option>
-      <option value="Tennessee">Tennessee</option>
-      <option value="Texas">Texas</option>
-      <option value="Utah">Utah</option>
-      <option value="Vermont">Vermont</option>
-      <option value="Virginia">Virginia</option>
-      <option value="Washington">Washington</option>
-      <option value="West Virginia">West Virginia</option>
-      <option value="Wisconsin">Wisconsin</option>
-      <option value="Wyoming">Wyoming</option>
-    </select>
+    <input type="number" id="amount" name="amount" step="0.01" required />
 
     <label for="country">Country</label>
-    <select id="country" name="country" required>
-      <option value="" disabled selected>Select Country</option>
-      <option value="United States">United States</option>
-      <option value="Canada">Canada</option>
-      <option value="United Kingdom">United Kingdom</option>
-      <option value="Brazil">Brazil</option>
-      <option value="Germany">Germany</option>
-      <option value="France">France</option>
-      <option value="Australia">Australia</option>
-      <option value="Japan">Japan</option>
-      <option value="India">India</option>
-    </select>
+    <select id="country" name="country" required></select>
 
-    <button type="submit">Submit Transfer</button>
-    <a href="index.html"><button type="button" class="btn-secondary">Back to Home</button></a>
+    <label for="state">State</label>
+    <select id="state" name="state" required></select>
+
+    <label for="city">City</label>
+    <select id="city" name="city" required></select>
+
+    <div class="btn-group">
+      <button type="button" onclick="location.href='index.html'">Back</button>
+      <button type="submit">Submit</button>
+    </div>
   </form>
 
+  <script>
+    const data = {
+      "United States": {
+        "California": ["Los Angeles", "San Francisco", "San Diego"],
+        "Texas": ["Houston", "Dallas", "Austin"],
+        "Florida": ["Miami", "Orlando", "Tampa"]
+      },
+      "Canada": {
+        "Ontario": ["Toronto", "Ottawa", "Hamilton"],
+        "Quebec": ["Montreal", "Quebec City"],
+        "British Columbia": ["Vancouver", "Victoria"]
+      },
+      "Brazil": {
+        "São Paulo": ["São Paulo", "Campinas"],
+        "Rio de Janeiro": ["Rio", "Niterói"]
+      }
+    };
+
+    const countrySelect = document.getElementById("country");
+    const stateSelect = document.getElementById("state");
+    const citySelect = document.getElementById("city");
+
+    function populateCountries() {
+      for (let country in data) {
+        countrySelect.innerHTML += `<option value="${country}">${country}</option>`;
+      }
+    }
+
+    function populateStates() {
+      const country = countrySelect.value;
+      stateSelect.innerHTML = `<option value="">Select State</option>`;
+      citySelect.innerHTML = `<option value="">Select City</option>`;
+      if (data[country]) {
+        for (let state in data[country]) {
+          stateSelect.innerHTML += `<option value="${state}">${state}</option>`;
+        }
+      }
+    }
+
+    function populateCities() {
+      const country = countrySelect.value;
+      const state = stateSelect.value;
+      citySelect.innerHTML = `<option value="">Select City</option>`;
+      if (data[country] && data[country][state]) {
+        data[country][state].forEach(city => {
+          citySelect.innerHTML += `<option value="${city}">${city}</option>`;
+        });
+      }
+    }
+
+    countrySelect.addEventListener("change", populateStates);
+    stateSelect.addEventListener("change", populateCities);
+
+    document.getElementById("transferForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      // You can optionally store values in localStorage/sessionStorage here
+      window.location.href = "confirmation.html";
+    });
+
+    populateCountries();
+  </script>
 </body>
 </html>

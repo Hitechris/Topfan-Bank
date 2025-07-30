@@ -5,87 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Online Banking Dashboard</title>
   <style>
-    body {
-      margin: 0;
+    * {
+      box-sizing: border-box;
       font-family: 'Segoe UI', sans-serif;
-      background: #f4f7fa;
-      color: #111;
+      margin: 0;
+      padding: 0;
     }
 
-    header {
-      background-color: #001f3f;
-      color: white;
-      padding: 1.5rem;
+    body {
+      background: #fdfcf9;
+      padding: 30px;
+      color: #1a1a1a;
+    }
+
+    h1 {
       text-align: center;
-      font-size: 1.8rem;
-      font-weight: bold;
+      color: #3e1f0d;
+      margin-bottom: 25px;
     }
 
-    .balances {
+    .balance-container {
       display: flex;
       justify-content: space-around;
+      gap: 20px;
+      margin-bottom: 30px;
       flex-wrap: wrap;
+    }
+
+    .card {
+      background: #f8f2ee;
       padding: 20px;
-      gap: 20px;
-    }
-
-    .balance-card {
-      flex: 1 1 300px;
-      background: #ffffff;
-      padding: 1.5rem;
       border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       text-align: center;
+      border: 2px solid #3e1f0d;
     }
 
-    .checking { border-left: 5px solid #007bff; } /* Blue */
-    .savings { border-left: 5px solid #222222; } /* Black */
-
-    .balance-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.2rem;
+    .card h2 {
+      margin-bottom: 10px;
+      color: #3e1f0d;
     }
 
-    .balance-card p {
-      font-size: 1.5rem;
+    .card p {
+      font-size: 1.5em;
       font-weight: bold;
-      color: #007bff;
+      color: #00538a;
     }
 
-    .features {
+    .grid-section {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 20px;
-      padding: 30px;
+      margin-bottom: 30px;
     }
 
-    .feature {
-      background-color: #fff;
-      border: 2px solid #007bff;
-      color: #001f3f;
+    .feature-link {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
       text-align: center;
-      padding: 20px;
-      font-weight: bold;
-      border-radius: 10px;
       text-decoration: none;
-      transition: all 0.3s ease;
+      color: #003366;
+      font-weight: bold;
+      border: 2px solid #8B4513;
+      transition: background 0.2s ease, color 0.2s ease;
     }
 
-    .feature:hover {
-      background-color: #001f3f;
+    .feature-link:hover {
+      background: #8B4513;
       color: #fff;
-      transform: scale(1.05);
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #001f3f;
-      color: white;
     }
 
     @media (max-width: 600px) {
-      .balances {
+      .balance-container {
         flex-direction: column;
         align-items: center;
       }
@@ -93,42 +86,47 @@
   </style>
 </head>
 <body>
+  <h1>Welcome to Your Dashboard</h1>
 
-  <header>Welcome to MyBank Dashboard</header>
-
-  <section class="balances">
-    <div class="balance-card checking">
-      <h3>Checking Account</h3>
-      <p>$3,450.89</p>
+  <div class="balance-container">
+    <div class="card">
+      <h2>Checking Balance</h2>
+      <p>$4,200.75</p>
     </div>
-    <div class="balance-card savings">
-      <h3>Savings Account</h3>
-      <p>$12,785.55</p>
+    <div class="card">
+      <h2>Savings Balance</h2>
+      <p>$12,865.40</p>
     </div>
-  </section>
+  </div>
 
-  <section class="features">
-    <a href="transfer.html" class="feature">Transfer Money</a>
-    <a href="transactions.html" class="feature">Recent Transactions</a>
-    <a href="profile.html" class="feature">User Profile</a>
-    <a href="atm.html" class="feature">ATM Locator</a>
-    <a href="loan.html" class="feature">Apply for Loan</a>
-    <a href="calculator.html" class="feature">Loan Calculator</a>
-    <a href="settings.html" class="feature">Settings</a>
-    <a href="support.html" class="feature">Contact Support</a>
-    <a href="notifications.html" class="feature">Notifications</a>
-    <a href="summary.html" class="feature">Account Summary</a>
-    <a href="statements.html" class="feature">Statements</a>
-    <a href="budget.html" class="feature">Budget Planner</a>
-    <a href="security.html" class="feature">Security Center</a>
-    <a href="paybills.html" class="feature">Pay Bills</a>
-    <a href="investments.html" class="feature">Investments</a>
-    <a href="rewards.html" class="feature">Rewards & Offers</a>
-  </section>
+  <!-- 4 x 4 Grid Sections -->
+  <div class="grid-section">
+    <a class="feature-link" href="transfer.html">Transfer Money</a>
+    <a class="feature-link" href="transactions.html">Transaction History</a>
+    <a class="feature-link" href="profile.html">User Profile</a>
+    <a class="feature-link" href="settings.html">Settings</a>
+  </div>
 
-  <footer>
-    &copy; 2025 MyBank. All rights reserved.
-  </footer>
+  <div class="grid-section">
+    <a class="feature-link" href="atm.html">ATM Locator</a>
+    <a class="feature-link" href="loan.html">Apply for Loan</a>
+    <a class="feature-link" href="calculator.html">Loan Calculator</a>
+    <a class="feature-link" href="support.html">Contact Support</a>
+  </div>
+
+  <div class="grid-section">
+    <a class="feature-link" href="notifications.html">Notifications</a>
+    <a class="feature-link" href="summary.html">Account Summary</a>
+    <a class="feature-link" href="statements.html">Statements</a>
+    <a class="feature-link" href="budget.html">Budget Planner</a>
+  </div>
+
+  <div class="grid-section">
+    <a class="feature-link" href="cards.html">Manage Cards</a>
+    <a class="feature-link" href="security.html">Security</a>
+    <a class="feature-link" href="analytics.html">Spending Analytics</a>
+    <a class="feature-link" href="logout.html">Logout</a>
+  </div>
 
 </body>
 </html>

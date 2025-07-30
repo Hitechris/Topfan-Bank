@@ -72,4 +72,54 @@
     }
 
     .feature-card:hover {
-      transform
+      transform: scale(1.03);
+      background: linear-gradient(to right, #00c853, #ffffff);
+      color: #000;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    @media (max-width: 768px) {
+      .balance-card p {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>My Banking Dashboard</h1>
+
+  <div class="balances">
+    <div class="balance-card">
+      <h2>Checking Account Balance</h2>
+      <p>$5,200.75</p>
+    </div>
+    <div class="balance-card savings">
+      <h2>Savings Account Balance</h2>
+      <p>$12,845.50</p>
+    </div>
+  </div>
+
+  <div class="features-grid">
+    <a href="#"><div class="feature-card">Deposit Check</div></a>
+    <a href="#"><div class="feature-card">Pay Bills</div></a>
+    <a href="#"><div class="feature-card">ATM Locator</div></a>
+    <a href="#"><div class="feature-card">User Profile</div></a>
+    <a href="#"><div class="feature-card">Logout</div></a>
+    <a href="#"><div class="feature-card">Open Account</div></a>
+    <a href="#"><div class="feature-card">Apply for Loan</div></a>
+    <a href="#"><div class="feature-card">Contact Support</div></a>
+    <a href="#"><div class="feature-card">Settings</div></a>
+    <a href="#"><div class="feature-card">Budget Planner</div></a>
+    <a href="#"><div class="feature-card">Transfer Money</div></a>
+    <a href="#"><div class="feature-card">Recent Transactions</div></a>
+    <a href="#"><div class="feature-card">Statements</div></a>
+    <a href="#"><div class="feature-card">Notifications</div></a>
+    <a href="#"><div class="feature-card">Loan Calculator</div></a>
+    <a href="#"><div class="feature-card">Security Settings</div></a>
+  </div>
+</body>
+</html>

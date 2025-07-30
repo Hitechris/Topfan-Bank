@@ -3,28 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Top Fan Bank Dashboard</title>
+  <title>Standard Bank Dashboard</title>
   <style>
     :root {
-      --bg-main: #1e1f3d;
-      --card-bg: #2a2c56;
-      --accent: #6c63ff;
-      --accent-light: #a084ff;
-      --text-light: #f1f1f1;
-      --text-muted: #c5c5c5;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+      --bg-main: #ffffff;
+      --primary: #1e3a8a; /* deep blue */
+      --secondary: #dc2626; /* red */
+      --text: #1f2937; /* dark gray text */
+      --card-bg: #f8f9fc;
+      --card-hover: #e2e8f0;
+      --balance-text: #1e3a8a;
     }
 
     body {
       font-family: 'Segoe UI', sans-serif;
       background: var(--bg-main);
-      color: var(--text-light);
+      color: var(--text);
       padding: 20px;
+      margin: 0;
     }
 
     header {
@@ -34,13 +30,12 @@
 
     header h1 {
       font-size: 2.5rem;
-      color: var(--accent-light);
+      color: var(--primary);
     }
 
     header h2 {
-      font-size: 1.3rem;
-      color: var(--text-muted);
-      margin-top: 10px;
+      font-size: 1.2rem;
+      color: var(--secondary);
     }
 
     .balances {
@@ -53,23 +48,24 @@
 
     .balance-box {
       background: var(--card-bg);
-      border-radius: 14px;
+      border-left: 5px solid var(--primary);
+      border-radius: 10px;
       padding: 20px 30px;
       text-align: center;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       min-width: 250px;
     }
 
     .balance-box h3 {
-      color: var(--accent-light);
+      color: var(--secondary);
+      font-size: 1.1rem;
       margin-bottom: 10px;
-      font-size: 1rem;
     }
 
     .balance-box p {
       font-size: 1.8rem;
-      color: #00ffd5;
       font-weight: bold;
+      color: var(--balance-text);
     }
 
     .dashboard {
@@ -83,37 +79,37 @@
     .card {
       background: var(--card-bg);
       padding: 20px;
-      border-radius: 12px;
+      border-radius: 10px;
       text-align: center;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
       transition: transform 0.2s ease, background 0.3s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      background: #383a6a;
+      background: var(--card-hover);
     }
 
     .card h3 {
-      margin-bottom: 12px;
+      color: var(--primary);
       font-size: 1.1rem;
-      color: var(--accent);
+      margin-bottom: 10px;
     }
 
     .card a {
       display: inline-block;
       margin-top: 10px;
-      padding: 8px 16px;
-      background-color: var(--accent);
+      padding: 8px 14px;
+      background-color: var(--secondary);
       color: white;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 6px;
       font-weight: 600;
       transition: background 0.3s ease;
     }
 
     .card a:hover {
-      background-color: var(--accent-light);
+      background-color: #b91c1c;
     }
 
     @media (max-width: 1024px) {
@@ -137,18 +133,18 @@
 </head>
 <body>
   <header>
-    <h1>Welcome to Top Fan Bank</h1>
+    <h1>Welcome to Your Bank</h1>
     <h2>Hello John Deo</h2>
   </header>
 
   <div class="balances">
     <div class="balance-box">
-      <h3>Checking Balance</h3>
-      <p>$15,240.75</p>
+      <h3>Checking Account</h3>
+      <p>$12,850.40</p>
     </div>
     <div class="balance-box">
-      <h3>Savings Balance</h3>
-      <p>$10,540.15</p>
+      <h3>Savings Account</h3>
+      <p>$9,305.20</p>
     </div>
   </div>
 

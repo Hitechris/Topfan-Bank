@@ -3,65 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Transfer Money</title>
+  <title>Transfer Funds</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f1f1f1;
-      margin: 0;
+      background-color: #f2f2f2;
       padding: 20px;
     }
+
     .container {
-      max-width: 600px;
+      max-width: 500px;
       margin: auto;
       background: white;
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 0 10px #ccc;
     }
+
     h2 {
       text-align: center;
+      margin-bottom: 20px;
     }
+
     label {
       display: block;
       margin-top: 15px;
       font-weight: bold;
     }
-    input, select, button {
+
+    input, select {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
       border-radius: 5px;
       border: 1px solid #ccc;
     }
-    .btn-group {
+
+    .buttons {
       display: flex;
       justify-content: space-between;
       margin-top: 20px;
     }
-    .btn-group a, .btn-group button {
-      width: 48%;
-      background-color: #007BFF;
-      color: white;
-      text-align: center;
-      text-decoration: none;
+
+    .buttons a, .buttons button {
+      padding: 10px 20px;
       border: none;
-      padding: 10px;
       border-radius: 5px;
+      text-decoration: none;
+      text-align: center;
+      font-weight: bold;
       cursor: pointer;
     }
-    .btn-group a:hover, .btn-group button:hover {
-      background-color: #0056b3;
+
+    a {
+      background-color: #6c757d;
+      color: white;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    button:hover, a:hover {
+      opacity: 0.9;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Transfer Money</h2>
-    <form action="confirmation.html" method="GET">
+    <h2>Transfer Funds</h2>
+    <form id="transferForm">
       <label for="fromAccount">From Account</label>
       <select id="fromAccount" name="fromAccount" required>
-        <option value="">Select Account</option>
+        <option value="">Select</option>
         <option value="Checking">Checking Account</option>
         <option value="Savings">Savings Account</option>
       </select>
@@ -78,89 +93,40 @@
       <label for="amount">Amount</label>
       <input type="number" id="amount" name="amount" step="0.01" required>
 
-      <label for="country">Country</label>
-      <select id="country" name="country" required>
-        <option value="">Select Country</option>
-      </select>
-
-      <label for="state">State</label>
-      <select id="state" name="state" required>
-        <option value="">Select State</option>
-      </select>
-
-      <label for="city">City</label>
-      <select id="city" name="city" required>
-        <option value="">Select City</option>
-      </select>
-
-      <div class="btn-group">
-        <a href="index.html">Back to Home</a>
-        <button type="submit">Continue</button>
+      <div class="buttons">
+        <a href="index.html">Back</a>
+        <button type="submit">Submit</button>
       </div>
     </form>
   </div>
 
   <script>
-    const countries = ["United States", "Canada", "Brazil", "Germany", "India", "France", "Japan", "Mexico", "Nigeria", "United Kingdom"];
-    const statesByCountry = {
-      "United States": ["California", "Texas", "Florida", "New York", "Illinois"],
-      "Canada": ["Ontario", "Quebec", "British Columbia", "Alberta"],
-      "Brazil": ["São Paulo", "Rio de Janeiro", "Bahia", "Minas Gerais"],
-      "Germany": ["Bavaria", "Berlin", "Saxony", "Hesse"],
-      "India": ["Maharashtra", "Delhi", "Karnataka", "Tamil Nadu"],
-      "France": ["Île-de-France", "Provence", "Normandy", "Brittany"],
-      "Japan": ["Tokyo", "Osaka", "Kyoto", "Hokkaido"],
-      "Mexico": ["Jalisco", "Mexico City", "Yucatán", "Nuevo León"],
-      "Nigeria": ["Lagos", "Abuja", "Kano", "Rivers"],
-      "United Kingdom": ["England", "Scotland", "Wales", "Northern Ireland"]
-    };
-    const citiesByState = {
-      "California": ["Los Angeles", "San Diego", "San Francisco"],
-      "Texas": ["Houston", "Dallas", "Austin"],
-      "Florida": ["Miami", "Orlando", "Tampa"],
-      "Ontario": ["Toronto", "Ottawa", "Hamilton"],
-      "São Paulo": ["São Paulo", "Campinas", "Santos"],
-      "Bavaria": ["Munich", "Nuremberg"],
-      "Maharashtra": ["Mumbai", "Pune", "Nagpur"],
-      "Île-de-France": ["Paris", "Versailles"],
-      "Tokyo": ["Shinjuku", "Shibuya", "Ueno"],
-      "Jalisco": ["Guadalajara", "Puerto Vallarta"],
-      "Lagos": ["Ikeja", "Lekki", "Yaba"],
-      "England": ["London", "Manchester", "Liverpool"]
-    };
+    function generateTransactionID() {
+      return 'TX' + Date.now().toString().slice(-10) + Math.floor(Math.random() * 1000);
+    }
 
-    const countrySelect = document.getElementById("country");
-    const stateSelect = document.getElementById("state");
-    const citySelect = document.getElementById("city");
+    document.getElementById('transferForm').addEventListener('submit', function(event) {
+      event.preventDefault();
 
-    countries.forEach(country => {
-      const option = document.createElement("option");
-      option.value = country;
-      option.text = country;
-      countrySelect.add(option);
-    });
+      const fromAccount = document.getElementById('fromAccount').value;
+      const recipientName = document.getElementById('recipientName').value;
+      const accountNumber = document.getElementById('accountNumber').value;
+      const routingNumber = document.getElementById('routingNumber').value;
+      const amount = document.getElementById('amount').value;
+      const transactionId = generateTransactionID();
+      const dateTime = new Date().toISOString();
 
-    countrySelect.addEventListener("change", () => {
-      stateSelect.innerHTML = '<option value="">Select State</option>';
-      citySelect.innerHTML = '<option value="">Select City</option>';
-      const states = statesByCountry[countrySelect.value] || [];
-      states.forEach(state => {
-        const option = document.createElement("option");
-        option.value = state;
-        option.text = state;
-        stateSelect.add(option);
+      const params = new URLSearchParams({
+        fromAccount,
+        recipientName,
+        accountNumber,
+        routingNumber,
+        amount,
+        transactionId,
+        dateTime
       });
-    });
 
-    stateSelect.addEventListener("change", () => {
-      citySelect.innerHTML = '<option value="">Select City</option>';
-      const cities = citiesByState[stateSelect.value] || [];
-      cities.forEach(city => {
-        const option = document.createElement("option");
-        option.value = city;
-        option.text = city;
-        citySelect.add(option);
-      });
+      window.location.href = `confirmation.html?${params.toString()}`;
     });
   </script>
 </body>

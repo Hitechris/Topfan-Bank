@@ -3,69 +3,177 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BankDash Dashboard</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>BankDash - Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      display: flex;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background: #fff;
+      padding: 20px;
+      border-right: 1px solid #ccc;
+      height: 100vh;
+      position: fixed;
+    }
+
+    .sidebar h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin: 15px 0;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #5b2b9c;
+      font-weight: 500;
+    }
+
+    .main-content {
+      margin-left: 240px;
+      padding: 20px;
+      width: 100%;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-bar .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 28px;
+    }
+
+    .account-summary {
+      margin-top: 20px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .account-summary h2 {
+      margin-bottom: 10px;
+    }
+
+    .quick-actions {
+      margin-top: 20px;
+    }
+
+    .quick-actions a {
+      display: inline-block;
+      background-color: #e0e0e0;
+      padding: 10px 16px;
+      margin: 6px 6px 0 0;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #333;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .quick-actions a:hover {
+      background-color: #ccc;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+
+      .main-content {
+        margin: 0;
+      }
+
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="dashboard">
-    <aside class="sidebar">
-      <h2>🏦 BankDash</h2>
-      <ul>
-        <li><a href="#">🏠 Dashboard</a></li>
-        <li><a href="transfer.html">💸 Transfer</a></li>
-        <li><a href="#">💳 Cards</a></li>
-        <li><a href="#">📄 Statements</a></li>
-        <li><a href="#">📍 ATM Locator</a></li>
-        <li><a href="#">🔐 Security</a></li>
-        <li><a href="#">⚙️ Settings</a></li>
-      </ul>
-    </aside>
+  <!-- Sidebar Navigation -->
+  <div class="sidebar">
+    <h2>🏛️ BankDash</h2>
+    <ul>
+      <li><a href="index.html">🏠 Dashboard</a></li>
+      <li><a href="transfer.html">💸 Transfer</a></li>
+      <li><a href="#">💳 Cards</a></li>
+      <li><a href="#">📄 Statements</a></li>
+      <li><a href="atm.html">📍 ATM Locator</a></li>
+      <li><a href="#">🔐 Security</a></li>
+      <li><a href="#">⚙️ Settings</a></li>
+    </ul>
+  </div>
 
-    <main class="main-content">
-      <header>
-        <div class="toggle-theme">🌙</div>
-        <div class="user-info">
-          <span class="notification">🔔</span>
-          <span class="username">John Doe</span>
-          <a href="#" class="logout">Logout</a>
-        </div>
-      </header>
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="top-bar">
+      <div class="user-info">
+        <span>🌙</span>
+        <span>🔔 John Doe</span>
+        <a href="#" style="color:#5b2b9c;">Logout</a>
+      </div>
+    </div>
 
-      <section class="greeting">
-        <h1>Welcome, John Doe</h1>
-      </section>
+    <h1>Welcome, John Doe</h1>
 
-      <section class="account-summary">
-        <div class="card">
-          <h3>Current Balance</h3>
-          <p>$15,230.75</p>
-        </div>
-        <div class="card">
-          <h3>Available Credit</h3>
-          <p>$5,000.00</p>
-        </div>
-        <div class="card">
-          <h3>Loan Balance</h3>
-          <p>$8,100.00</p>
-        </div>
-      </section>
+    <!-- Account Summary -->
+    <div class="account-summary">
+      <h2>Current Balance</h2>
+      <p>$15,230.75</p>
 
-      <section class="quick-actions">
-        <h2>Quick Actions</h2>
-        <div class="actions">
-          <!-- Add this inside your Quick Actions, Sidebar, or wherever appropriate -->
-<a href="transaction.html" class="quick-action-btn">
-  <i class="fas fa-list-alt"></i> View Transactions
-</a>
-          <button>💵 Pay Bills</button>
-          <button>📷 Deposit Check</button>
-          <button onclick="window.location.href='transfer.html'">💸 Transfer</button>
-          <button>📍 Locate ATM</button>
-        </div>
-      </section>
-    </main>
+      <h2>Available Credit</h2>
+      <p>$5,000.00</p>
+
+      <h2>Loan Balance</h2>
+      <p>$8,100.00</p>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+      <h2>Quick Actions</h2>
+      <a href="transaction.html">📋 View Transactions</a>
+      <a href="#">💵 Pay Bills</a>
+      <a href="#">📷 Deposit Check</a>
+      <a href="transfer.html">💸 Transfer</a>
+      <a href="atm.html">📍 Locate ATM</a>
+      <a href="#">📑 Request Statement</a>
+    </div>
+
+    <footer>
+      © 2025 BankDash | Help | Terms | Contact
+    </footer>
   </div>
 </body>
 </html>

@@ -119,24 +119,38 @@
         margin: 10px auto;
       }
     }
-
-    #preloader {
-  background: #000 url('https://i.gifer.com/YCZH.gif') no-repeat center center;
-  background-size: 60px 60px;
-  height: 100vh;
-  width: 100%;
+#preloader {
   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 9999;
+  transition: opacity 1s ease;
 }
 
-body.loaded #preloader {
-  display: none;
+.preloader-logo {
+  width: 120px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.6; }
 }
   </style>
 </head>
 <body>
 
-  <div id="preloader"></div> <!-- ✅ PRELOADER -->
+<div id="preloader">
+  <img src="IMG_2525.jpeg" alt="Topfan Bank Logo" class="preloader-logo">
+  <p class="preloader-text">Loading Topfan Bank...</p>
+</div>
 
   <div class="container">
     <img src="IMG_2525.jpeg" alt="Topfan Bank Logo">
@@ -172,9 +186,14 @@ body.loaded #preloader {
       </p>
     </div>
   </div>
-    <script>
+  <script>
   window.addEventListener("load", function () {
-    document.body.classList.add("loaded");
+    const preloader = document.getElementById("preloader");
+    preloader.style.opacity = "0";
+    preloader.style.pointerEvents = "none";
+    setTimeout(() => {
+      preloader.style.display = "none";
+    }, 1000); // Wait 1 second for fade out
   });
 </script>
 </body>

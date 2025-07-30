@@ -3,137 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Banking Dashboard</title>
+  <title>Online Banking Dashboard</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
       margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-
-    header {
-      background: linear-gradient(to right, #004080, #cc0066);
-      color: white;
       padding: 20px;
-      text-align: center;
     }
 
-    .balance-container {
+    h1 {
+      text-align: center;
+      color: #0d1b2a;
+      margin-bottom: 30px;
+    }
+
+    .balances {
       display: flex;
       justify-content: center;
-      gap: 20px;
-      margin: 30px 20px;
       flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 40px;
     }
 
     .balance-card {
-      flex: 1 1 250px;
-      background: #fff;
-      border-left: 10px solid #663399;
-      border-radius: 10px;
+      background: linear-gradient(135deg, #cce7ff, #ffffff);
       padding: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      flex: 1 1 300px;
+      max-width: 400px;
     }
 
-    .balance-card:nth-child(2) {
-      border-left-color: #ff66b2;
+    .balance-card.savings {
+      background: linear-gradient(135deg, #ffe0f0, #ffffff);
     }
 
-    .balance-card h3 {
+    .balance-card h2 {
+      color: #1a1a1a;
       margin: 0;
       font-size: 18px;
-      color: #444;
     }
 
     .balance-card p {
       font-size: 24px;
       font-weight: bold;
-      margin-top: 10px;
-      color: #222;
+      margin: 10px 0 0;
+      color: #0d47a1;
     }
 
-    .grid {
+    .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
-      padding: 20px;
     }
 
-    .card {
-      background: #ffffff;
+    .feature-card {
+      background: #fff;
+      border: 2px solid #e91e63;
+      color: #003366;
+      padding: 20px;
+      text-align: center;
       border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-      color: #000;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease;
-      border-top: 5px solid #cc0066;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+      cursor: pointer;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card a {
-      text-decoration: none;
-      color: #004080;
-      font-weight: 600;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #004080;
-      color: white;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 600px) {
-      .balance-container {
-        flex-direction: column;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Welcome to Your Banking Dashboard</h1>
-  </header>
-
-  <section class="balance-container">
-    <div class="balance-card">
-      <h3>Checking Account</h3>
-      <p>$5,120.50</p>
-    </div>
-    <div class="balance-card">
-      <h3>Savings Account</h3>
-      <p>$12,340.75</p>
-    </div>
-  </section>
-
-  <section class="grid">
-    <div class="card"><a href="transfer.html">Transfer Money</a></div>
-    <div class="card"><a href="transaction.html">Transaction History</a></div>
-    <div class="card"><a href="deposit.html">Deposit Check</a></div>
-    <div class="card"><a href="bills.html">Pay Bills</a></div>
-    <div class="card"><a href="atm.html">ATM Locator</a></div>
-    <div class="card"><a href="profile.html">User Profile</a></div>
-    <div class="card"><a href="logout.html">Logout</a></div>
-    <div class="card"><a href="open-account.html">Open Account</a></div>
-    <div class="card"><a href="loan.html">Apply for Loan</a></div>
-    <div class="card"><a href="support.html">Contact Support</a></div>
-    <div class="card"><a href="settings.html">Settings</a></div>
-    <div class="card"><a href="budget.html">Budget Planner</a></div>
-    <div class="card"><a href="alerts.html">Alerts</a></div>
-    <div class="card"><a href="cards.html">Card Management</a></div>
-    <div class="card"><a href="security.html">Security</a></div>
-    <div class="card"><a href="investments.html">Investments</a></div>
-  </section>
-
-  <footer>
-    &copy; 2025 YourBank. All rights reserved.
-  </footer>
-</body>
-</html>
+    .feature-card:hover {
+      transform

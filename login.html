@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Topfan Bank - Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('IMG_2494.jpeg.JPG') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: white;
+    }
+
+    .login-container {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 2rem;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+      animation: slideIn 1.5s ease forwards;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    h2 {
+      text-align: center;
+      color: #ff3333;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 20px;
+      top: 46%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .input-group {
+      position: relative;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background-color: #ff3333;
+      color: white;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #cc0000;
+    }
+
+    .small-links {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .small-links a {
+      color: #ff6666;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .bank-info {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .captcha, .otp {
+      margin-top: 1rem;
+    }
+
+    .scrolling-banner {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 1rem;
+      animation: scroll 15s linear infinite;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    @keyframes scroll {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="scrolling-banner">
+      🔐 Welcome to Topfan Bank – Trusted and Secured Online Bank 🔐
+    </div>
+
+    <h2>Topfan Bank Login</h2>
+
+    <form>
+      <label for="username">Username or Email</label>
+      <input type="text" id="username" required />
+
+      <label for="password">Password</label>
+      <div class="input-group">
+        <input type="password" id="password" required />
+        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+      </div>
+
+      <div class="otp">
+        <label for="otp">Enter OTP (2FA)</label>
+        <input type="text" id="otp" placeholder="Enter One Time Password" required />
+      </div>
+
+      <div class="captcha">
+        <label>CAPTCHA</label>
+        <input type="text" placeholder="Enter CAPTCHA here" required />
+      </div>
+
+      <button type="submit">Login</button>
+
+      <div class="small-links">
+        <a href="#">Forgot Password?</a> | 
+        <a href="#">Create an Account</a>
+      </div>
+    </form>
+
+    <div class="bank-info">
+      <strong>About Topfan Bank:</strong><br/>
+      Topfan Bank is a trusted, secure, and innovative digital bank offering 24/7 services to help you manage your finances with ease. 
+      Our services include checking and savings accounts, wire transfers, loan applications, bill payments, and more. 
+      We prioritize your security and customer experience, providing encrypted login, OTP protection, and friendly customer support.
+    </div>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const password = document.getElementById("password");
+      password.type = password.type === "password" ? "text" : "password";
+    }
+  </script>
+</body>
+</html>

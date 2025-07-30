@@ -119,9 +119,27 @@
         margin: 10px auto;
       }
     }
+
+    #preloader {
+  background: #000 url('https://i.gifer.com/YCZH.gif') no-repeat center center;
+  background-size: 60px 60px;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+}
+
+body.loaded #preloader {
+  display: none;
+}
   </style>
 </head>
 <body>
+
+  <div id="preloader"></div> <!-- ✅ PRELOADER -->
+
+  <div class="container">
+    <img src="IMG_2525.jpeg" alt="Topfan Bank Logo">
   <div class="container">
     <img src="IMG_2525.jpeg" alt="Topfan Bank Logo" class="logo">
 
@@ -154,5 +172,10 @@
       </p>
     </div>
   </div>
+    <script>
+  window.addEventListener("load", function () {
+    document.body.classList.add("loaded");
+  });
+</script>
 </body>
 </html>

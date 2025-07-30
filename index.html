@@ -1,179 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Top Fan Bank Dashboard</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fefefe; /* white base */
-      color: #333;
-    }
-
-    header {
-      background-color: #003366; /* deep blue */
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    .balance-container {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin: 20px;
-    }
-
-    .balance {
-      flex: 1;
-      min-width: 250px;
-      text-align: center;
-      padding: 20px;
-      border-radius: 10px;
-      color: white;
-      font-size: 18px;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .checking {
-      background-color: #ff99aa; /* soft pink */
-    }
-
-    .savings {
-      background-color: #996633; /* brown tone */
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .card {
-      background-color: #e6f0ff; /* light blue */
-      border: 2px solid #cce0ff;
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      transition: transform 0.2s ease, background-color 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      background-color: #d0ebff;
-    }
-
-    .card h3 {
-      margin-bottom: 12px;
-      color: #003366;
-    }
-
-    .card button {
-      background-color: #ff3366; /* pink-red */
-      color: white;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-    }
-
-    .card button:hover {
-      background-color: #e6004c;
-    }
-
-    @media (max-width: 600px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header>
+    <h1>Welcome to Top Fan Bank</h1>
+    <p class="username">Hello, John Deo</p>
+  </header>
 
-  <header>Welcome to Top Fan Bank</header>
+  <section class="balances">
+    <div class="card balance-card checking">
+      <h3>Checking Balance</h3>
+      <p>$3,250.00</p>
+    </div>
+    <div class="card balance-card savings">
+      <h3>Savings Balance</h3>
+      <p>$9,875.50</p>
+    </div>
+  </section>
 
-  <div class="balance-container">
-    <div class="balance checking">💳 Checking Balance: $3,500.00</div>
-    <div class="balance savings">💼 Savings Balance: $8,750.00</div>
-  </div>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Transfer Money</h3>
-      <a href="transfer.html"><button>Go</button></a>
-    </div>
-    <div class="card">
-      <h3>Transaction History</h3>
-      <a href="transaction.html"><button>View</button></a>
-    </div>
-    <div class="card">
-      <h3>Deposit Checks</h3>
-      <a href="deposit.html"><button>Deposit</button></a>
-    </div>
-    <div class="card">
-      <h3>Pay Bills</h3>
-      <a href="paybills.html"><button>Pay</button></a>
-    </div>
-    <div class="card">
-      <h3>ATM Locator</h3>
-      <a href="atm.html"><button>Find</button></a>
-    </div>
-    <div class="card">
-      <h3>User Profile</h3>
-      <a href="profile.html"><button>View</button></a>
-    </div>
-    <div class="card">
-      <h3>Logout</h3>
-      <a href="logout.html"><button>Exit</button></a>
-    </div>
-    <div class="card">
-      <h3>Open Account</h3>
-      <a href="open.html"><button>Create</button></a>
-    </div>
-    <div class="card">
-      <h3>Loan Services</h3>
-      <a href="loan.html"><button>Check</button></a>
-    </div>
-    <div class="card">
-      <h3>Credit Card</h3>
-      <a href="credit.html"><button>Apply</button></a>
-    </div>
-    <div class="card">
-      <h3>Notifications</h3>
-      <a href="notifications.html"><button>View</button></a>
-    </div>
-    <div class="card">
-      <h3>Settings</h3>
-      <a href="settings.html"><button>Go</button></a>
-    </div>
-    <div class="card">
-      <h3>Security Logs</h3>
-      <a href="security.html"><button>Logs</button></a>
-    </div>
-    <div class="card">
-      <h3>Investments</h3>
-      <a href="invest.html"><button>Track</button></a>
-    </div>
-    <div class="card">
-      <h3>Budget Planner</h3>
-      <a href="budget.html"><button>Plan</button></a>
-    </div>
-    <div class="card">
-      <h3>Help & Support</h3>
-      <a href="support.html"><button>Help</button></a>
-    </div>
-  </div>
-
+  <section class="features-grid">
+    <div class="card"><h4>Transfer Money</h4><a href="#">Go</a></div>
+    <div class="card"><h4>Transaction History</h4><a href="#">View</a></div>
+    <div class="card"><h4>Deposit Checks</h4><a href="#">Deposit</a></div>
+    <div class="card"><h4>Pay Bills</h4><a href="#">Pay</a></div>
+    <div class="card"><h4>ATM Locator</h4><a href="#">Find</a></div>
+    <div class="card"><h4>User Profile</h4><a href="#">View</a></div>
+    <div class="card"><h4>Open Account</h4><a href="#">Create</a></div>
+    <div class="card"><h4>Logout</h4><a href="#">Exit</a></div>
+    <div class="card"><h4>Loan Info</h4><a href="#">Check</a></div>
+    <div class="card"><h4>Credit Score</h4><a href="#">View</a></div>
+    <div class="card"><h4>Investment Plans</h4><a href="#">Explore</a></div>
+    <div class="card"><h4>Support Center</h4><a href="#">Contact</a></div>
+    <div class="card"><h4>Notifications</h4><a href="#">View</a></div>
+    <div class="card"><h4>Account Settings</h4><a href="#">Edit</a></div>
+    <div class="card"><h4>Security Logs</h4><a href="#">Logs</a></div>
+    <div class="card"><h4>Referral Program</h4><a href="#">Join</a></div>
+  </section>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bank Dashboard</title>
+  <title>Top Fan Bank Dashboard</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
     * {
@@ -14,28 +14,31 @@
     body {
       margin: 0;
       padding: 20px;
-      background-color: #f4f4f4;
+      background-color: #e6f0fa; /* Light gray-blue background */
       color: #333;
     }
 
-    h2 {
-      font-size: 18px;
+    h1, h2 {
+      text-align: center;
+      margin-top: 0;
     }
 
     .top-bar {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
+      margin-bottom: 10px;
     }
 
     .profile-link {
       color: purple;
       font-weight: bold;
       text-decoration: underline;
+      margin-top: 8px;
     }
 
     .card {
-      background-color: #e74c3c; /* RED */
+      background-color: #e74c3c; /* Red cards */
       color: white;
       padding: 20px;
       margin: 15px 0;
@@ -84,21 +87,22 @@
     }
 
     @media (max-width: 600px) {
-      .top-bar {
-        flex-direction: column;
-        align-items: flex-start;
+      .actions-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
 
+  <h1>Welcome to Top Fan Bank</h1>
+
   <div class="top-bar">
-    <h1>Hello, John Doe</h1>
-    <a href="profile.html" class="profile-link">Profile</a>
+    <h2>Hello, John Doe</h2>
+    <a href="profile.html" class="profile-link">View Profile</a>
   </div>
 
-  <p>Here’s a quick overview of your account</p>
+  <p style="text-align:center;">Here’s a quick overview of your account</p>
 
   <div class="card">
     <h3>Current Balance</h3>

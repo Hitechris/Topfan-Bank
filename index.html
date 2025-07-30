@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Topfan Bank - Welcome</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('IMG_2494.jpeg.JPG') no-repeat center center/cover;
+      color: white;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 48px;
+      animation: fadeInDown 1.5s ease;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+      animation: fadeIn 2s ease;
+    }
+
+    .hero .hero-buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      border-radius: 5px;
+      background-color: #0077cc;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .hero .hero-buttons a:hover {
+      background-color: #005fa3;
+    }
+
+    /* Chat Button */
+    .chat-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #0077cc;
+      color: white;
+      font-size: 24px;
+      padding: 15px;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: background 0.3s ease;
+    }
+
+    .chat-btn:hover {
+      background-color: #005fa3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      font-size: 14px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      header h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to Topfan Bank</h1>
+  </header>
+
+  <section class="hero">
+    <h2>Modern Banking, Trusted by Thousands</h2>
+    <p>
+      At <strong>Topfan Bank</strong>, we’re committed to helping you take full control of your finances. 
+      Access your accounts, manage transactions, locate ATMs, and stay updated—all with ease and security. 
+      Your financial future starts here.
+    </p>
+    <div class="hero-buttons">
+      <a href="login.html">Sign In</a>
+      <a href="register.html">Register</a>
+      <a href="forgot.html">Forgot Password</a>
+    </div>
+  </section>
+
+  <a href="contact.html" class="chat-btn" title="Chat with Us">💬</a>
+
+  <footer>
+    &copy; 2025 Topfan Bank. All rights reserved.
+  </footer>
+
+</body>
+</html>

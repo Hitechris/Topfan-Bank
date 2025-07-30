@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top Fan Bank Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #c62828; /* Red */
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    .greeting {
+      text-align: center;
+      background-color: #e53935;
+      color: #fff;
+      font-size: 1.2rem;
+      padding: 0.75rem;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card a {
+      text-decoration: none;
+      color: #c62828;
+      font-weight: bold;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to Top Fan Bank</h1>
+  </header>
+
+  <div class="greeting">
+    Hello John Deo
+  </div>
+
+  <div class="dashboard">
+    <div class="card"><a href="balance.html">Account Balance</a></div>
+    <div class="card"><a href="transactions.html">Transaction History</a></div>
+    <div class="card"><a href="transfer.html">Transfer Funds</a></div>
+    <div class="card"><a href="deposit.html">Deposit Checks</a></div>
+    <div class="card"><a href="paybills.html">Pay Bills</a></div>
+    <div class="card"><a href="atm-locator.html">ATM Locator</a></div>
+    <div class="card"><a href="profile.html">User Profile</a></div>
+    <div class="card"><a href="settings.html">Settings</a></div>
+    <div class="card"><a href="open-account.html">Open New Account</a></div>
+    <div class="card"><a href="loan-application.html">Apply for Loan</a></div>
+    <div class="card"><a href="card-management.html">Card Management</a></div>
+    <div class="card"><a href="budget.html">Budget Tracker</a></div>
+    <div class="card"><a href="logout.html">Logout</a></div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Top Fan Bank. All rights reserved.
+  </div>
+
+</body>
+</html>

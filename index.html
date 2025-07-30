@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Topfan Bank Dashboard</title>
+  <style>
+    /* Wallpaper background */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('wallpaper.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Dark overlay layer */
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.65);
+      min-height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    /* Page Title */
+    h1 {
+      text-align: center;
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    /* Grid layout for features */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Feature cards */
+    .feature {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 12px;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+      transition: 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    .feature:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-5px);
+      cursor: pointer;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 22px;
+      }
+
+      .feature {
+        padding: 15px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay">
+    <h1>Topfan Bank Dashboard</h1>
+
+    <!-- Grid of features -->
+    <div class="grid">
+
+      <!-- Class 1 -->
+      <div class="feature">Account Summary</div>
+      <div class="feature">Transaction History</div>
+      <div class="feature">Transfer Money</div>
+      <div class="feature">Bill Payments</div>
+
+      <!-- Class 2 -->
+      <div class="feature">Credit Card</div>
+      <div class="feature">Loan Management</div>
+      <div class="feature">Currency Exchange</div>
+      <div class="feature">Notifications</div>
+
+      <!-- Class 3 -->
+      <div class="feature">ATM Locator</div>
+      <div class="feature">Spending Chart</div>
+      <div class="feature">Income Tracker</div>
+      <div class="feature">Investments</div>
+
+      <!-- Class 4 -->
+      <div class="feature">User Profile</div>
+      <div class="feature">Settings</div>
+      <div class="feature">Security Logs</div>
+      <div class="feature">Logout</div>
+
+    </div>
+  </div>
+
+</body>
+</html>

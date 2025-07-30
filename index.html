@@ -4,124 +4,93 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Top Fan Bank Dashboard</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    :root {
-      --main-bg: linear-gradient(135deg, #1f1c2c, #928dab);
-      --primary-color: #ffffff;
-      --accent-color: #00e6b8;
-      --card-bg: rgba(255, 255, 255, 0.1);
-      --text-color: #f0f0f0;
-      --button-bg: #00e6b8;
-      --button-hover: #00c3a3;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-    }
-
     body {
-      background: var(--main-bg);
-      color: var(--text-color);
-      padding: 20px;
-      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #b30000; /* red background */
+      color: #fff;
     }
 
     header {
       text-align: center;
-      margin-bottom: 30px;
+      padding: 30px 0 10px;
     }
 
     header h1 {
-      font-size: 2.5rem;
-      color: var(--primary-color);
-      margin-bottom: 10px;
-    }
-
-    header h2 {
-      font-size: 1.2rem;
-      color: var(--accent-color);
-    }
-
-    .dashboard {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-bottom: 40px;
-    }
-
-    .card {
-      background: var(--card-bg);
-      padding: 20px;
-      border-radius: 15px;
-      width: 260px;
-      text-align: center;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: var(--accent-color);
-    }
-
-    .card p {
-      font-size: 1.8rem;
+      margin: 0;
+      font-size: 2.5em;
       font-weight: bold;
     }
 
-    .quick-actions {
-      max-width: 1000px;
-      margin: 0 auto;
+    header h2 {
+      margin: 10px 0 30px;
+      font-weight: 300;
+      font-size: 1.4em;
     }
 
-    .quick-actions h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 1.6rem;
-      color: var(--primary-color);
-    }
-
-    .actions-grid {
+    .dashboard {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
+      padding: 0 20px 50px;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .action-btn {
-      display: block;
-      background-color: var(--button-bg);
-      color: #000;
-      padding: 15px;
-      text-align: center;
-      text-decoration: none;
+    .card {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
       border-radius: 10px;
-      font-weight: 600;
-      transition: 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      text-align: center;
+      transition: 0.3s;
     }
 
-    .action-btn:hover {
-      background-color: var(--button-hover);
+    .card:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .card i {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 14px;
+      background-color: #fff;
+      color: #b30000;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .card a:hover {
+      background-color: #e6e6e6;
+    }
+
+    footer {
+      text-align: center;
+      color: #fff;
+      font-size: 0.9em;
+      padding: 20px;
     }
 
     @media (max-width: 600px) {
-      .dashboard {
-        flex-direction: column;
-        align-items: center;
+      header h1 {
+        font-size: 1.8em;
       }
 
-      .actions-grid {
-        grid-template-columns: 1fr;
+      header h2 {
+        font-size: 1.2em;
       }
     }
   </style>
@@ -130,44 +99,77 @@
 
   <header>
     <h1>Welcome to Top Fan Bank</h1>
-    <h2>Hello, John Doe</h2>
+    <h2>Hello John Deo</h2>
   </header>
 
-  <section class="dashboard">
+  <div class="dashboard">
     <div class="card">
-      <h3>💰 Current Balance</h3>
-      <p>$15,230.75</p>
+      <i class="fas fa-wallet"></i>
+      <h3>Account Balance</h3>
+      <p>$12,450.00</p>
+      <a href="balance.html">View Balance</a>
     </div>
-    <div class="card">
-      <h3>💳 Available Credit</h3>
-      <p>$5,000.00</p>
-    </div>
-    <div class="card">
-      <h3>🏦 Loan Balance</h3>
-      <p>$8,100.00</p>
-    </div>
-  </section>
 
-  <section class="quick-actions">
-    <h2>Quick Access</h2>
-    <div class="actions-grid">
-      <a href="transaction.html" class="action-btn">📊 Transactions</a>
-      <a href="pay-bills.html" class="action-btn">💸 Pay Bills</a>
-      <a href="deposit-check.html" class="action-btn">📷 Deposit Check</a>
-      <a href="transfer.html" class="action-btn">🔄 Transfer Funds</a>
-      <a href="atm-locator.html" class="action-btn">📍 ATM Locator</a>
-      <a href="request-statement.html" class="action-btn">📑 Statements</a>
-      <a href="security-settings.html" class="action-btn">🔐 Security</a>
-      <a href="profile.html" class="action-btn">👤 My Profile</a>
-      <a href="open-account.html" class="action-btn">➕ Open Account</a>
-      <a href="loan-services.html" class="action-btn">🏦 Loan Services</a>
-      <a href="credit-card.html" class="action-btn">💳 Credit Cards</a>
-      <a href="notifications.html" class="action-btn">🔔 Notifications</a>
-      <a href="settings.html" class="action-btn">⚙️ Settings</a>
-      <a href="help.html" class="action-btn">❓ Help</a>
-      <a href="logout.html" class="action-btn">🚪 Logout</a>
+    <div class="card">
+      <i class="fas fa-exchange-alt"></i>
+      <h3>Transfer Money</h3>
+      <p>Send funds securely</p>
+      <a href="transfer.html">Transfer</a>
     </div>
-  </section>
+
+    <div class="card">
+      <i class="fas fa-file-invoice-dollar"></i>
+      <h3>Pay Bills</h3>
+      <p>Manage your bills</p>
+      <a href="paybills.html">Pay Bills</a>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-camera"></i>
+      <h3>Deposit Check</h3>
+      <p>Deposit via camera</p>
+      <a href="deposit.html">Deposit</a>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-map-marker-alt"></i>
+      <h3>Locate ATM</h3>
+      <p>Find nearest ATM</p>
+      <a href="atm.html">Locate ATM</a>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-clock-rotate-left"></i>
+      <h3>Transaction History</h3>
+      <p>Track past transactions</p>
+      <a href="transaction.html">View Transactions</a>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-user-plus"></i>
+      <h3>Open New Account</h3>
+      <p>Create additional accounts</p>
+      <a href="openaccount.html">Open Account</a>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-user-cog"></i>
+      <h3>Settings</h3>
+      <p>Update preferences</p>
+      <a href="settings.html">Settings</a>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-sign-out-alt"></i>
+      <h3>Logout</h3>
+      <p>Securely logout</p>
+      <a href="logout.html">Logout</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Top Fan Bank. All rights reserved.
+  </footer>
 
 </body>
 </html>

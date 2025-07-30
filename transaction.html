@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transaction History</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      background-color: #0d47a1;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .toggle-mode {
+      background: none;
+      color: white;
+      border: 1px solid white;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .filters {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .filters input, .filters select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      flex: 1;
+      min-width: 150px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #e3f2fd;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    .status-success {
+      color: green;
+      font-weight: bold;
+    }
+
+    .status-failed {
+      color: red;
+      font-weight: bold;
+    }
+
+    .back-btn {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .back-btn a {
+      text-decoration: none;
+      background-color: #1976d2;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+    }
+
+    /* Dark mode */
+    body.dark {
+      background-color: #121212;
+      color: #eee;
+    }
+
+    body.dark table {
+      background-color: #1e1e1e;
+      color: #eee;
+    }
+
+    body.dark th {
+      background-color: #333;
+    }
+
+    body.dark tr:hover {
+      background-color: #2c2c2c;
+    }
+
+    body.dark .toggle-mode {
+      border-color: #ccc;
+      color: #ccc;
+    }
+
+    body.dark .back-btn a {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Transaction History</h1>
+    <button class="toggle-mode" onclick="toggleMode()">Dark/Light</button>
+  </header>
+
+  <div class="container">
+    <div class="filters">
+      <input type="date" id="filterDate" />
+      <select id="filterType">
+        <option value="">All Types</option>
+        <option value="Deposit">Deposit</option>
+        <option value="Withdrawal">Withdrawal</option>
+        <option value="Transfer">Transfer</option>
+      </select>
+      <input type="number" id="filterAmount" placeholder="Min Amount" />
+    </div>
+
+    <table id="transactionTable">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>ID</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Amount ($)</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Transactions will be inserted by JS -->
+      </tbody>
+    </table>
+
+    <div class="back-btn">
+      <a href="index.html">← Back to Dashboard</a>
+    </div>
+  </div>
+
+  <script>
+    const transactions = [
+      {
+        date: "2025-07-28",
+        time: "10:23 AM",
+        id: "TXN983245",
+        description: "Transfer to John",
+        type: "Transfer",
+        amount: 250.00,
+        status: "Success"
+      },
+      {
+        date: "2025-07-26",
+        time: "2:14 PM",
+        id: "TXN983224",
+        description: "Deposit - ATM",
+        type: "Deposit",
+        amount: 500.00,
+        status: "Success"
+      },
+      {
+        date: "2025-07-25",
+        time: "9:45 AM",
+        id: "TXN982900",
+        description: "Online Shopping",
+        type: "Withdrawal",
+        amount: 120.50,
+        status: "Failed"
+      },
+    ];
+
+    function loadTransactions() {
+      const table = document.querySelector("#transactionTable tbody");
+      table.innerHTML = "";
+
+      const filterDate = document.getElementById("filterDate").value;
+      const filterType = document.getElementById("filterType").value;
+      const filterAmount = parseFloat(document.getElementById("filterAmount").value);
+
+      transactions.forEach(tx => {
+        const txAmount = parseFloat(tx.amount);
+        if (
+          (filterDate && tx.date !== filterDate) ||
+          (filterType && tx.type !== filterType) ||
+          (!isNaN(filterAmount) && txAmount < filterAmount)
+        ) return;
+
+        const row = `
+          <tr>
+            <td>${tx.date}</td>
+            <td>${tx.time}</td>
+            <td>${tx.id}</td>
+            <td>${tx.description}</td>
+            <td>${tx.type}</td>
+            <td>$${tx.amount.toFixed(2)}</td>
+            <td class="${tx.status === 'Success' ? 'status-success' : 'status-failed'}">${tx.status}</td>
+          </tr>`;
+        table.innerHTML += row;
+      });
+    }
+
+    function toggleMode() {
+      document.body.classList.toggle("dark");
+    }
+
+    document.getElementById("filterDate").addEventListener("input", loadTransactions);
+    document.getElementById("filterType").addEventListener("change", loadTransactions);
+    document.getElementById("filterAmount").addEventListener("input", loadTransactions);
+
+    window.onload = loadTransactions;
+  </script>
+</body>
+</html>

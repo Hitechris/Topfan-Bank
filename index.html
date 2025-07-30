@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Topfan Bank – Welcome</title>
+  <link rel="icon" href="IMG_2525.jpeg" type="image/jpeg">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('IMG_2494.jpeg.JPG') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.65);
+      padding: 30px 20px;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    /* Scrolling Banner */
+    .scrolling-banner {
+      overflow: hidden;
+      white-space: nowrap;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 10px 0;
+      margin-bottom: 20px;
+    }
+
+    .scrolling-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-text 15s linear infinite;
+      color: #00bfff;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    @keyframes scroll-text {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* Animations */
+    h1 {
+      animation: slideIn 1.2s ease forwards;
+      font-size: 32px;
+      margin: 10px 0;
+    }
+
+    .slogan {
+      animation: fadeIn 2s ease-in-out forwards;
+      font-size: 18px;
+      color: #ccc;
+    }
+
+    @keyframes slideIn {
+      0% { opacity: 0; transform: translateY(-50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .buttons {
+      margin: 30px 0;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      display: inline-block;
+      margin: 10px 20px;
+      padding: 15px 40px;
+      background: #00bfff;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 30px;
+      transition: background 0.3s ease;
+    }
+
+    .buttons a:hover {
+      background: #007acc;
+    }
+
+    .about-section {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 25px;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
+    .about-section h2 {
+      color: #00bfff;
+      margin-bottom: 10px;
+    }
+
+    .about-section p {
+      color: #e0e0e0;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .buttons a {
+        display: block;
+        margin: 10px auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="IMG_2525.jpeg" alt="Topfan Bank Logo" class="logo">
+
+    <!-- Scrolling Banner -->
+    <div class="scrolling-banner">
+      <div class="scrolling-text">
+        Welcome to Topfan Bank – Trusted and Secured Online Bank for Your Future!
+      </div>
+    </div>
+
+    <h1>Welcome to Topfan Bank</h1>
+    <p class="slogan">Trusted and Secured Online Bank for Your Future</p>
+
+    <div class="buttons">
+      <a href="login.html">Login</a>
+      <a href="TopfanMainMenu.html">Dashboard</a>
+    </div>
+
+    <!-- About Section -->
+    <div class="about-section">
+      <h2>About Topfan Bank</h2>
+      <p>
+        Topfan Bank is a modern, secure, and user-centered digital banking platform designed to serve individuals and businesses with cutting-edge financial solutions. Our goal is to provide seamless, secure, and intuitive banking services that fit your lifestyle.
+      </p>
+      <p>
+        With Topfan Bank, you can easily manage your checking and savings accounts, transfer money, pay bills, track expenses, and much more – all from one place. We prioritize your safety with multi-layered encryption and two-factor authentication.
+      </p>
+      <p>
+        Join the future of banking. Fast, flexible, and fully online.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

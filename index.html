@@ -1,138 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Topfan Bank Dashboard</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('528463BC-2B34-48B4-9EDB-30DCDE09105F.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
     }
 
     header {
-      background-color: #002244;
-      color: white;
+      background-color: rgba(0, 0, 50, 0.8);
       padding: 20px;
       text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-
-    .balances {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      margin: 20px;
-    }
-
-    .card-balance {
-      background-color: white;
-      border-left: 10px solid #0077b6;
-      padding: 20px;
-      margin: 10px;
-      border-radius: 8px;
-      flex: 1;
-      min-width: 250px;
-      max-width: 400px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .card-balance h3 {
-      margin-top: 0;
-      color: #333;
-    }
-
-    .card-balance p {
-      font-size: 1.5em;
+      font-size: 32px;
       font-weight: bold;
-      color: #0077b6;
+      color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
 
-    .features-grid {
+    .container {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      padding: 20px;
+      padding: 40px;
     }
 
-    .feature {
+    .feature-box {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
       padding: 20px;
-      border-radius: 10px;
       text-align: center;
-      font-weight: bold;
-      text-decoration: none;
-      color: white;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease;
+      transition: 0.3s ease;
+      border: 2px solid rgba(255,255,255,0.2);
     }
 
-    .feature:hover {
-      transform: translateY(-5px);
+    .feature-box:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.03);
     }
 
-    .red { background-color: #e63946; }
-    .blue { background-color: #1d3557; }
-    .green { background-color: #2a9d8f; }
-    .gray { background-color: #6c757d; }
-    .white {
-      background-color: white;
-      color: #333;
-      border: 2px solid #ccc;
+    .feature-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 10px;
     }
 
-    @media (max-width: 600px) {
-      .balances {
-        flex-direction: column;
-        align-items: center;
-      }
+    .class-group {
+      margin-bottom: 40px;
     }
+
+    h2 {
+      text-align: left;
+      margin-left: 40px;
+      color: #ffffff;
+      border-left: 5px solid #00ffcc;
+      padding-left: 10px;
+    }
+
+    /* Feature colors */
+    .blue { border-left: 6px solid #3498db; }
+    .green { border-left: 6px solid #2ecc71; }
+    .gray { border-left: 6px solid #bdc3c7; }
+    .white { border-left: 6px solid #ffffff; }
   </style>
 </head>
 <body>
+  <header>Welcome to Topfan Bank Dashboard</header>
 
-  <header>
-    <h1>Topfan Bank</h1>
-    <p>Your Trusted Digital Banking Platform</p>
-  </header>
-
-  <section class="balances">
-    <div class="card-balance">
-      <h3>Checking Account</h3>
-      <p>$8,260.00</p>
+  <!-- Class 1 -->
+  <div class="class-group">
+    <h2>Accounts</h2>
+    <div class="container">
+      <div class="feature-box blue"><div class="feature-title">Checking Account</div></div>
+      <div class="feature-box green"><div class="feature-title">Savings Account</div></div>
+      <div class="feature-box gray"><div class="feature-title">Account Summary</div></div>
+      <div class="feature-box white"><div class="feature-title">Recent Transactions</div></div>
     </div>
-    <div class="card-balance">
-      <h3>Savings Account</h3>
-      <p>$15,420.00</p>
+  </div>
+
+  <!-- Class 2 -->
+  <div class="class-group">
+    <h2>Payments</h2>
+    <div class="container">
+      <div class="feature-box blue"><div class="feature-title">Transfer Funds</div></div>
+      <div class="feature-box green"><div class="feature-title">Pay Bills</div></div>
+      <div class="feature-box gray"><div class="feature-title">Scheduled Payments</div></div>
+      <div class="feature-box white"><div class="feature-title">Payment History</div></div>
     </div>
-  </section>
+  </div>
 
-  <section class="features-grid">
-    <a href="transaction.html" class="feature red">Transaction History</a>
-    <a href="transfer.html" class="feature blue">Transfer Money</a>
-    <a href="atm.html" class="feature green">ATM Locator</a>
-    <a href="loan.html" class="feature gray">Apply for Loan</a>
+  <!-- Class 3 -->
+  <div class="class-group">
+    <h2>Services</h2>
+    <div class="container">
+      <div class="feature-box blue"><div class="feature-title">ATM Locator</div></div>
+      <div class="feature-box green"><div class="feature-title">Credit Card</div></div>
+      <div class="feature-box gray"><div class="feature-title">Loan Management</div></div>
+      <div class="feature-box white"><div class="feature-title">Currency Exchange</div></div>
+    </div>
+  </div>
 
-    <a href="calculator.html" class="feature white">Loan Calculator</a>
-    <a href="settings.html" class="feature red">Settings</a>
-    <a href="support.html" class="feature blue">Contact Support</a>
-    <a href="notifications.html" class="feature green">Notifications</a>
-
-    <a href="summary.html" class="feature gray">Account Summary</a>
-    <a href="statements.html" class="feature white">Statements</a>
-    <a href="planner.html" class="feature red">Budget Planner</a>
-    <a href="profile.html" class="feature blue">User Profile</a>
-
-    <a href="security.html" class="feature green">Security Logs</a>
-    <a href="cards.html" class="feature gray">Manage Cards</a>
-    <a href="deposits.html" class="feature white">Direct Deposit</a>
-    <a href="logout.html" class="feature red">Logout</a>
-  </section>
+  <!-- Class 4 -->
+  <div class="class-group">
+    <h2>Profile & Settings</h2>
+    <div class="container">
+      <div class="feature-box blue"><div class="feature-title">User Profile</div></div>
+      <div class="feature-box green"><div class="feature-title">Settings</div></div>
+      <div class="feature-box gray"><div class="feature-title">Security Logs</div></div>
+      <div class="feature-box white"><div class="feature-title">Logout</div></div>
+    </div>
+  </div>
 
 </body>
 </html>

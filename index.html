@@ -3,106 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BankDash - Dashboard</title>
+  <title>BankDash</title>
+  <link rel="stylesheet" href="style.css"/>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       display: flex;
-      background: #f4f4f4;
-      color: #333;
+      background: #f5f7fa;
     }
 
-    /* Sidebar */
     .sidebar {
-      width: 220px;
-      background: #fff;
-      padding: 20px;
-      border-right: 1px solid #ccc;
+      width: 250px;
+      background-color: #2f3542;
+      color: #fff;
       height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
       position: fixed;
     }
 
     .sidebar h2 {
-      font-size: 20px;
-      margin-bottom: 20px;
+      font-size: 24px;
+      margin-bottom: 30px;
     }
 
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .sidebar ul li {
-      margin: 15px 0;
-    }
-
-    .sidebar ul li a {
+    .sidebar a {
+      color: #f1f2f6;
       text-decoration: none;
-      color: #5b2b9c;
-      font-weight: 500;
+      display: block;
+      margin: 12px 0;
+      font-size: 16px;
     }
 
-    .main-content {
-      margin-left: 240px;
-      padding: 20px;
-      width: 100%;
+    .main {
+      margin-left: 250px;
+      padding: 30px;
+      flex: 1;
     }
 
-    .top-bar {
+    .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .top-bar .user-info {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .header .user {
+      font-weight: bold;
     }
 
-    h1 {
-      margin-top: 20px;
-      font-size: 28px;
+    .dashboard-section {
+      margin-top: 30px;
     }
 
-    .account-summary {
-      margin-top: 20px;
+    .card {
       background: #fff;
       padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    .account-summary h2 {
-      margin-bottom: 10px;
+    .card h3 {
+      margin: 0 0 10px;
     }
 
-    .quick-actions {
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
       margin-top: 20px;
     }
 
-    .quick-actions a {
-      display: inline-block;
-      background-color: #e0e0e0;
-      padding: 10px 16px;
-      margin: 6px 6px 0 0;
-      border-radius: 16px;
+    .action-button {
+      background-color: #3742fa;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
       text-decoration: none;
-      font-weight: bold;
-      color: #333;
       font-size: 14px;
-      transition: background-color 0.3s ease;
+      cursor: pointer;
+      transition: background 0.3s;
     }
 
-    .quick-actions a:hover {
-      background-color: #ccc;
-    }
-
-    footer {
-      margin-top: 40px;
-      font-size: 13px;
-      color: #888;
+    .action-button:hover {
+      background-color: #2f35c7;
     }
 
     @media (max-width: 768px) {
@@ -110,70 +96,71 @@
         display: none;
       }
 
-      .main-content {
-        margin: 0;
-      }
-
-      .top-bar {
-        flex-direction: column;
-        align-items: flex-start;
+      .main {
+        margin-left: 0;
+        padding: 20px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Sidebar Navigation -->
+
   <div class="sidebar">
-    <h2>🏛️ BankDash</h2>
-    <ul>
-      <li><a href="index.html">🏠 Dashboard</a></li>
-      <li><a href="transfer.html">💸 Transfer</a></li>
-      <li><a href="#">💳 Cards</a></li>
-      <li><a href="#">📄 Statements</a></li>
-      <li><a href="atm.html">📍 ATM Locator</a></li>
-      <li><a href="#">🔐 Security</a></li>
-      <li><a href="#">⚙️ Settings</a></li>
-    </ul>
+    <h2>🏦 BankDash</h2>
+    <a href="index.html">🏠 Dashboard</a>
+    <a href="transfer.html">💸 Transfer</a>
+    <a href="cards.html">💳 Cards</a>
+    <a href="statements.html">📄 Statements</a>
+    <a href="transaction.html">📊 Transactions</a>
+    <a href="atm.html">📍 ATM Locator</a>
+    <a href="security.html">🔐 Security</a>
+    <a href="settings.html">⚙️ Settings</a>
+    <br><br>
+    <a href="logout.html">🚪 Logout</a>
   </div>
 
-  <!-- Main Content -->
-  <div class="main-content">
-    <div class="top-bar">
-      <div class="user-info">
-        <span>🌙</span>
-        <span>🔔 John Doe</span>
-        <a href="#" style="color:#5b2b9c;">Logout</a>
+  <div class="main">
+    <div class="header">
+      <div>
+        <h1>Welcome, John Doe</h1>
+        <p>Here’s a quick overview of your account</p>
+      </div>
+      <div class="user">
+        🌙 Dark Mode |
+        <a href="profile.html">👤 Profile</a>
       </div>
     </div>
 
-    <h1>Welcome, John Doe</h1>
+    <div class="dashboard-section">
+      <div class="card">
+        <h3>Current Balance</h3>
+        <p>$15,230.75</p>
+      </div>
 
-    <!-- Account Summary -->
-    <div class="account-summary">
-      <h2>Current Balance</h2>
-      <p>$15,230.75</p>
+      <div class="card">
+        <h3>Available Credit</h3>
+        <p>$5,000.00</p>
+      </div>
 
-      <h2>Available Credit</h2>
-      <p>$5,000.00</p>
-
-      <h2>Loan Balance</h2>
-      <p>$8,100.00</p>
+      <div class="card">
+        <h3>Loan Balance</h3>
+        <p>$8,100.00</p>
+      </div>
     </div>
 
-    <!-- Quick Actions -->
-    <div class="quick-actions">
+    <div class="dashboard-section">
       <h2>Quick Actions</h2>
-      <a href="transaction.html">📋 View Transactions</a>
-      <a href="#">💵 Pay Bills</a>
-      <a href="#">📷 Deposit Check</a>
-      <a href="transfer.html">💸 Transfer</a>
-      <a href="atm.html">📍 Locate ATM</a>
-      <a href="#">📑 Request Statement</a>
+      <div class="actions">
+        <a class="action-button" href="transaction.html">📊 View Transactions</a>
+        <a class="action-button" href="paybills.html">💰 Pay Bills</a>
+        <a class="action-button" href="deposit.html">📷 Deposit Check</a>
+        <a class="action-button" href="transfer.html">🔄 Transfer</a>
+        <a class="action-button" href="atm.html">📍 Locate ATM</a>
+        <a class="action-button" href="request.html">📬 Request Statement</a>
+        <a class="action-button" href="security.html">🔐 Security Settings</a>
+        <a class="action-button" href="profile.html">👤 User Profile</a>
+      </div>
     </div>
-
-    <footer>
-      © 2025 BankDash | Help | Terms | Contact
-    </footer>
   </div>
 </body>
 </html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Topfan Bank</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('IMG_2494.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #00bfff;
+      position: relative;
+    }
+
+    .typewriter span {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typing 4s steps(30, end) infinite;
+    }
+
+    @keyframes typing {
+      0%, 100% { width: 0; }
+      40%, 60% { width: 100%; }
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    .balance {
+      font-size: 22px;
+      margin-top: 10px;
+      color: #ff4d4d;
+    }
+
+    .card button {
+      background-color: #00bfff;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .card button:hover {
+      background-color: #007acc;
+    }
+
+    @media (max-width: 600px) {
+      .dashboard {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+
+      .card {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="typewriter">
+    <span>Welcome to Topfan Bank</span>
+  </header>
+
+  <div class="dashboard">
+    <!-- Balances -->
+    <div class="card">
+      <div>Checking Balance</div>
+      <div class="balance">$5,200.75</div>
+    </div>
+    <div class="card">
+      <div>Savings Balance</div>
+      <div class="balance">$12,480.00</div>
+    </div>
+
+    <!-- Features -->
+    <div class="card">
+      <div>Transfer Money</div>
+      <button onclick="location.href='transfer.html'">Go</button>
+    </div>
+    <div class="card">
+      <div>Transaction History</div>
+      <button onclick="location.href='transaction.html'">View</button>
+    </div>
+
+    <div class="card">
+      <div>Account Summary</div>
+      <button onclick="location.href='summary.html'">Open</button>
+    </div>
+    <div class="card">
+      <div>ATM Locator</div>
+      <button onclick="location.href='atm.html'">Locate</button>
+    </div>
+
+    <div class="card">
+      <div>Pay Bills</div>
+      <button onclick="location.href='bills.html'">Pay Now</button>
+    </div>
+    <div class="card">
+      <div>Notifications</div>
+      <button onclick="location.href='notifications.html'">Check</button>
+    </div>
+
+    <div class="card">
+      <div>Profile</div>
+      <button onclick="location.href='profile.html'">Manage</button>
+    </div>
+    <div class="card">
+      <div>Settings</div>
+      <button onclick="location.href='settings.html'">Edit</button>
+    </div>
+
+    <!-- Add more features -->
+    <div class="card">
+      <div>Credit Score</div>
+      <button onclick="location.href='credit.html'">View</button>
+    </div>
+    <div class="card">
+      <div>Loan Application</div>
+      <button onclick="location.href='loan.html'">Apply</button>
+    </div>
+
+    <div class="card">
+      <div>Security Activity</div>
+      <button onclick="location.href='security.html'">Check</button>
+    </div>
+    <div class="card">
+      <div>Budget Planner</div>
+      <button onclick="location.href='budget.html'">Plan</button>
+    </div>
+  </div>
+</body>
+</html>

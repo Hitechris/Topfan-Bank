@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Online Banking Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f7fa;
+      color: #111;
+    }
+
+    header {
+      background-color: #001f3f;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .balances {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .balance-card {
+      flex: 1 1 300px;
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .checking { border-left: 5px solid #007bff; } /* Blue */
+    .savings { border-left: 5px solid #222222; } /* Black */
+
+    .balance-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .balance-card p {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .feature {
+      background-color: #fff;
+      border: 2px solid #007bff;
+      color: #001f3f;
+      text-align: center;
+      padding: 20px;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .feature:hover {
+      background-color: #001f3f;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #001f3f;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      .balances {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>Welcome to MyBank Dashboard</header>
+
+  <section class="balances">
+    <div class="balance-card checking">
+      <h3>Checking Account</h3>
+      <p>$3,450.89</p>
+    </div>
+    <div class="balance-card savings">
+      <h3>Savings Account</h3>
+      <p>$12,785.55</p>
+    </div>
+  </section>
+
+  <section class="features">
+    <a href="transfer.html" class="feature">Transfer Money</a>
+    <a href="transactions.html" class="feature">Recent Transactions</a>
+    <a href="profile.html" class="feature">User Profile</a>
+    <a href="atm.html" class="feature">ATM Locator</a>
+    <a href="loan.html" class="feature">Apply for Loan</a>
+    <a href="calculator.html" class="feature">Loan Calculator</a>
+    <a href="settings.html" class="feature">Settings</a>
+    <a href="support.html" class="feature">Contact Support</a>
+    <a href="notifications.html" class="feature">Notifications</a>
+    <a href="summary.html" class="feature">Account Summary</a>
+    <a href="statements.html" class="feature">Statements</a>
+    <a href="budget.html" class="feature">Budget Planner</a>
+    <a href="security.html" class="feature">Security Center</a>
+    <a href="paybills.html" class="feature">Pay Bills</a>
+    <a href="investments.html" class="feature">Investments</a>
+    <a href="rewards.html" class="feature">Rewards & Offers</a>
+  </section>
+
+  <footer>
+    &copy; 2025 MyBank. All rights reserved.
+  </footer>
+
+</body>
+</html>

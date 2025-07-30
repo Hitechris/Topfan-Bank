@@ -1,48 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Topfan Bank Dashboard</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
       font-family: 'Roboto', sans-serif;
-      background-image: url('assets/images/wallpaper.jpg'); /* Replace with actual path in your repo */
+      background: url('IMG_2491.jpeg') no-repeat center center fixed;
       background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      backdrop-filter: brightness(0.9);
       color: white;
     }
 
     header {
       background-color: rgba(0, 0, 0, 0.8);
-      padding: 20px;
       text-align: center;
+      padding: 20px;
       font-size: 28px;
       font-weight: bold;
-      color: #00aaff;
       border-bottom: 3px solid darkred;
+      color: #00aaff;
     }
 
     .balance-section {
       display: flex;
       justify-content: space-around;
-      background-color: rgba(0, 0, 0, 0.85);
-      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
       margin: 20px;
+      padding: 20px;
       border-radius: 10px;
     }
 
     .balance-card {
-      background-color: #002233;
+      background-color: #001f33;
       padding: 20px;
       border-radius: 10px;
       width: 45%;
@@ -62,7 +59,7 @@
 
     .feature-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
       padding: 20px;
       margin: 0 20px 40px;
@@ -81,38 +78,46 @@
 
     .feature-card:hover {
       transform: translateY(-5px);
-      background-color: #003344;
+      background-color: #002233;
     }
 
     .feature-card a {
       text-decoration: none;
       color: #fff;
       font-weight: bold;
+      font-size: 16px;
       display: block;
-      font-size: 18px;
     }
 
     footer {
       text-align: center;
-      padding: 10px;
+      padding: 15px;
       background-color: rgba(0, 0, 0, 0.7);
       color: gray;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
       .balance-section {
         flex-direction: column;
+        align-items: center;
       }
-
       .balance-card {
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
       }
     }
   </style>
 </head>
 <body>
-
   <header>
     Topfan Bank – Online Banking Dashboard
   </header>
@@ -153,6 +158,5 @@
   <footer>
     &copy; 2025 Topfan Bank. All rights reserved.
   </footer>
-
 </body>
 </html>

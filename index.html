@@ -146,6 +146,16 @@
         width: 80%;
       }
     }
+
+    .logo img {
+  height: 40px;
+  vertical-align: middle;
+}
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
   </style>
 </head>
 <body>
@@ -153,15 +163,20 @@
   <div class="overlay"></div>
 
   <!-- Navigation -->
-  <nav>
-    <div class="logo"><a href="#">🏦 Topfan Bank</a></div>
-    <div class="menu">
-      <a href="#hero">Home</a>
-      <a href="#about">About</a>
-      <a href="login.html">Login</a>
-      <a href="register.html">Register</a>
-    </div>
-  </nav>
+<nav>
+  <div class="logo">
+    <a href="index.html">
+      <img src="bank-logo.jpeg" alt="Topfan Bank Logo" style="height: 40px; vertical-align: middle;">
+      <span style="font-weight: bold; font-size: 20px; margin-left: 8px;">Topfan Bank</span>
+    </a>
+  </div>
+  <div class="menu">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+  </div>
+</nav>
 
   <!-- Hero Section -->
   <section id="hero" class="hero">

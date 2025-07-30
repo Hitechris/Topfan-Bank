@@ -3,171 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Standard Bank Dashboard</title>
+  <title>Banking Dashboard</title>
   <style>
-    :root {
-      --bg-main: #ffffff;
-      --primary: #1e3a8a; /* deep blue */
-      --secondary: #dc2626; /* red */
-      --text: #1f2937; /* dark gray text */
-      --card-bg: #f8f9fc;
-      --card-hover: #e2e8f0;
-      --balance-text: #1e3a8a;
-    }
-
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: var(--bg-main);
-      color: var(--text);
-      padding: 20px;
       margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      color: #002b5c;
     }
 
     header {
+      background-color: #002b5c;
+      color: #fff;
+      padding: 1rem;
       text-align: center;
-      margin-bottom: 30px;
     }
 
-    header h1 {
-      font-size: 2.5rem;
-      color: var(--primary);
-    }
-
-    header h2 {
-      font-size: 1.2rem;
-      color: var(--secondary);
-    }
-
-    .balances {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin: 30px auto;
-      flex-wrap: wrap;
-    }
-
-    .balance-box {
-      background: var(--card-bg);
-      border-left: 5px solid var(--primary);
-      border-radius: 10px;
-      padding: 20px 30px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      min-width: 250px;
-    }
-
-    .balance-box h3 {
-      color: var(--secondary);
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-    }
-
-    .balance-box p {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: var(--balance-text);
+    h1 {
+      margin: 0;
+      font-size: 24px;
     }
 
     .dashboard {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
     }
 
     .card {
-      background: var(--card-bg);
-      padding: 20px;
-      border-radius: 10px;
+      background-color: #f4f7fa;
+      border-radius: 8px;
+      padding: 1.5rem;
       text-align: center;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-      transition: transform 0.2s ease, background 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      background: var(--card-hover);
     }
 
     .card h3 {
-      color: var(--primary);
-      font-size: 1.1rem;
-      margin-bottom: 10px;
+      margin-bottom: 1rem;
+      font-size: 18px;
+      color: #002b5c;
     }
 
     .card a {
       display: inline-block;
-      margin-top: 10px;
-      padding: 8px 14px;
-      background-color: var(--secondary);
-      color: white;
+      padding: 0.5rem 1rem;
+      background-color: #d9001f;
+      color: #fff;
+      border-radius: 5px;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: background 0.3s ease;
+      font-weight: bold;
     }
 
     .card a:hover {
-      background-color: #b91c1c;
+      background-color: #b8001b;
     }
 
-    @media (max-width: 1024px) {
-      .dashboard {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .dashboard {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .dashboard {
-        grid-template-columns: 1fr;
+    @media (max-width: 500px) {
+      .card {
+        padding: 1rem;
       }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Welcome to Your Bank</h1>
-    <h2>Hello John Deo</h2>
+    <h1>My Bank Dashboard</h1>
   </header>
 
-  <div class="balances">
-    <div class="balance-box">
-      <h3>Checking Account</h3>
-      <p>$12,850.40</p>
-    </div>
-    <div class="balance-box">
-      <h3>Savings Account</h3>
-      <p>$9,305.20</p>
-    </div>
-  </div>
-
   <section class="dashboard">
-    <div class="card"><h3>Transfer Money</h3><a href="transfer.html">Go</a></div>
-    <div class="card"><h3>Transaction History</h3><a href="transaction.html">View</a></div>
-    <div class="card"><h3>Deposit Checks</h3><a href="deposit.html">Deposit</a></div>
-    <div class="card"><h3>Pay Bills</h3><a href="bills.html">Pay</a></div>
-
-    <div class="card"><h3>ATM Locator</h3><a href="atm.html">Find</a></div>
-    <div class="card"><h3>User Profile</h3><a href="profile.html">View</a></div>
-    <div class="card"><h3>Logout</h3><a href="logout.html">Exit</a></div>
-    <div class="card"><h3>Open Account</h3><a href="open-account.html">Create</a></div>
-
-    <div class="card"><h3>Credit Score</h3><a href="credit.html">Check</a></div>
-    <div class="card"><h3>Loan Requests</h3><a href="loans.html">Apply</a></div>
-    <div class="card"><h3>Recent Activity</h3><a href="activity.html">View</a></div>
-    <div class="card"><h3>Notifications</h3><a href="notifications.html">See</a></div>
-
-    <div class="card"><h3>Settings</h3><a href="settings.html">Edit</a></div>
-    <div class="card"><h3>Support</h3><a href="support.html">Help</a></div>
-    <div class="card"><h3>Dark/Light Mode</h3><a href="theme.html">Toggle</a></div>
-    <div class="card"><h3>Quick Summary</h3><a href="summary.html">View</a></div>
+    <div class="card">
+      <h3>Transfer Money</h3>
+      <a href="transfer.html">Go</a>
+    </div>
+    <div class="card">
+      <h3>Transaction History</h3>
+      <a href="transaction.html">View</a>
+    </div>
+    <div class="card">
+      <h3>Deposit Checks</h3>
+      <a href="deposit.html">Deposit</a>
+    </div>
+    <div class="card">
+      <h3>Pay Bills</h3>
+      <a href="bills.html">Pay</a>
+    </div>
+    <div class="card">
+      <h3>ATM Locator</h3>
+      <a href="atm.html">Find</a>
+    </div>
+    <div class="card">
+      <h3>User Profile</h3>
+      <a href="profile.html">View</a>
+    </div>
+    <div class="card">
+      <h3>Logout</h3>
+      <a href="logout.html">Exit</a>
+    </div>
+    <div class="card">
+      <h3>Open Account</h3>
+      <a href="open-account.html">Create</a>
+    </div>
   </section>
+
 </body>
 </html>

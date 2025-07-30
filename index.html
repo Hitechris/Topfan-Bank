@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top Fan Bank Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #e1f5fe);
+      color: #004d99;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #004d99;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    header h1 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    header h2 {
+      font-size: 22px;
+      font-weight: normal;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #003366;
+      padding: 15px 10px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      margin: 10px 15px;
+      padding: 10px 18px;
+      color: #fff;
+      text-decoration: none;
+      background-color: #00509e;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #0077cc;
+    }
+
+    main {
+      padding: 40px 25px;
+      flex: 1;
+    }
+
+    .section-title {
+      font-size: 24px;
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #003366;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #004d99;
+    }
+
+    .card p {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #004d99;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .card a:hover {
+      background-color: #1976d2;
+    }
+
+    footer {
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to Top Fan Bank</h1>
+    <h2>Hello, John Doe 👋</h2>
+  </header>
+
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="transaction.html">📋 Transactions</a>
+    <a href="transfer.html">💸 Transfer</a>
+    <a href="paybills.html">🧾 Pay Bills</a>
+    <a href="deposit.html">📤 Deposit</a>
+    <a href="atm.html">📍 ATM Locator</a>
+    <a href="statement.html">📑 Statement</a>
+    <a href="openaccount.html">➕ Open Account</a>
+    <a href="profile.html">👤 Profile</a>
+    <a href="logout.html">🚪 Logout</a>
+  </nav>
+
+  <main>
+    <div class="section-title">Account Summary</div>
+    <div class="dashboard-grid">
+      <div class="card">
+        <h3>Account Balance</h3>
+        <p>$15,230.45</p>
+        <a href="balance.html">View</a>
+      </div>
+
+      <div class="card">
+        <h3>Recent Transactions</h3>
+        <p>Updated: Today</p>
+        <a href="transaction.html">See All</a>
+      </div>
+
+      <div class="card">
+        <h3>ATM Locator</h3>
+        <p>Find Nearby ATMs</p>
+        <a href="atm.html">Locate</a>
+      </div>
+    </div>
+
+    <div class="section-title">Quick Actions</div>
+    <div class="dashboard-grid">
+      <div class="card">
+        <h3>Transfer Money</h3>
+        <p>Send funds easily</p>
+        <a href="transfer.html">Transfer</a>
+      </div>
+
+      <div class="card">
+        <h3>Pay Bills</h3>
+        <p>Electricity, Water, Internet</p>
+        <a href="paybills.html">Pay</a>
+      </div>
+
+      <div class="card">
+        <h3>Deposit Check</h3>
+        <p>Scan or Upload</p>
+        <a href="deposit.html">Deposit</a>
+      </div>
+
+      <div class="card">
+        <h3>Open New Account</h3>
+        <p>Savings / Business</p>
+        <a href="openaccount.html">Open</a>
+      </div>
+
+      <div class="card">
+        <h3>Statement</h3>
+        <p>Monthly PDF</p>
+        <a href="statement.html">Get</a>
+      </div>
+
+      <div class="card">
+        <h3>Profile Settings</h3>
+        <p>Update info</p>
+        <a href="profile.html">Edit</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Top Fan Bank. All rights reserved.
+  </footer>
+
+</body>
+</html>

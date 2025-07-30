@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Topfan Bank - Welcome</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-y: auto;
+    }
+
+    body {
+      background: url('IMG_2494.jpeg.JPG') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.7);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: rgba(20, 20, 20, 0.85);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      width: 120px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 2em;
+    }
+
+    p.subtext {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1.1em;
+      color: #ccc;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .buttons a {
+      background: #00bfff;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .buttons a:hover {
+      background: #008fcc;
+    }
+
+    .about-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .about-box h2 {
+      margin-bottom: 10px;
+    }
+
+    .about-box p {
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    @media (max-width: 600px) {
+      .buttons {
+        flex-direction: column;
+      }
+
+      .buttons a {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <div class="logo">
+        <img src="IMG_2525.jpeg" alt="Topfan Bank Logo">
+      </div>
+      <h1>TOPFAN BANK</h1>
+      <p class="subtext">Trusted and Secured Online Bank for Your Future</p>
+
+      <div class="buttons">
+        <a href="signup.html">Sign up</a>
+        <a href="login.html">Login</a>
+        <a href="Dashboard.html">Topfan Main Menu</a>
+      </div>
+
+      <div class="about-box">
+        <h2>About Topfan Bank</h2>
+        <p>
+          Topfan Bank is a modern, secure, and user-centered digital banking platform
+          designed to serve individuals and businesses with cutting-edge financial
+          solutions. Our goal is to provide seamless, secure, and intuitive banking
+          services that support your financial journey every step of the way. With
+          Topfan, your future is in safe hands.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

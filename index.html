@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Welcome to Topfan Bank</title>
+
+  <!-- Favicon (optional, can use logo image as icon) -->
+  <link rel="icon" type="image/jpeg" href="IMG_2525.jpeg">
+
   <style>
-    /* Reset & base */
     * {
       margin: 0;
       padding: 0;
@@ -14,173 +17,191 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: url('IMG_2494.jpeg.JPG') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-      height: 100vh;
-      overflow: hidden;
+      background: linear-gradient(to bottom right, #003366, #005588);
+      color: #ffffff;
+      overflow-x: hidden;
     }
 
-    /* Loader Spinner */
-    #loader {
+    /* Preloader */
+    #preloader {
       position: fixed;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background-color: #000;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       z-index: 9999;
     }
 
-    .spinner {
-      border: 6px solid #f3f3f3;
+    #preloader .spinner {
+      border: 6px solid #ccc;
       border-top: 6px solid #00bfff;
       border-radius: 50%;
       width: 60px;
       height: 60px;
-      animation: spin 1s linear infinite;
+      animation: spin 1.5s linear infinite;
     }
 
     @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
     }
 
     /* Main container */
-    .main-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+    .container {
       text-align: center;
-      opacity: 0;
-      animation: fadeInMain 2s ease-in forwards;
-      animation-delay: 1.8s;
+      padding: 60px 20px;
     }
 
-    @keyframes fadeInMain {
-      to {
-        opacity: 1;
-      }
-    }
-
+    /* Logo */
     .logo {
-      width: 80px;
-      height: 80px;
+      max-width: 140px;
       margin-bottom: 20px;
-      animation: bounceIn 1.5s ease-in-out;
-    }
-
-    @keyframes bounceIn {
-      0% { transform: scale(0.2); opacity: 0; }
-      60% { transform: scale(1.2); opacity: 1; }
-      100% { transform: scale(1); }
+      animation: fadeIn 2s ease;
     }
 
     h1 {
-      font-size: 48px;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+      font-size: 2.8rem;
       margin-bottom: 10px;
-      animation: slideDown 1.2s ease-out;
+      animation: fadeInDown 1.2s ease-in-out;
     }
 
-    @keyframes slideDown {
-      from {
-        transform: translateY(-60px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
+    .slogan {
+      font-size: 1.2rem;
+      color: #dddddd;
+      animation: fadeIn 2s ease;
     }
 
-    p {
-      font-size: 20px;
-      max-width: 600px;
-      margin: 20px auto 40px;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 15px 20px;
-      border-radius: 12px;
-      animation: fadeInText 2s ease-in 1.3s forwards;
-      opacity: 0;
+    /* Buttons */
+    .buttons {
+      margin-top: 40px;
     }
 
-    @keyframes fadeInText {
-      to { opacity: 1; }
-    }
-
-    .button-group {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-      animation: fadeInText 2s ease-in 1.8s forwards;
-      opacity: 0;
-    }
-
-    a.button {
+    .buttons a {
+      text-decoration: none;
+      display: inline-block;
+      margin: 12px;
+      padding: 14px 28px;
+      font-size: 1rem;
       background-color: #00bfff;
       color: white;
-      text-decoration: none;
-      padding: 15px 30px;
       border-radius: 8px;
-      font-weight: bold;
-      font-size: 16px;
-      transition: transform 0.3s ease, background-color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      animation: slideInUp 1s ease;
     }
 
-    a.button:hover {
-      background-color: #0080ff;
+    .buttons a:hover {
+      background-color: #009acd;
       transform: scale(1.05);
     }
 
-    footer {
-      position: absolute;
-      bottom: 15px;
-      font-size: 14px;
-      color: #ccc;
+    /* About section */
+    .about {
+      margin-top: 60px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #f0f0f0;
+      font-size: 1rem;
+      line-height: 1.7;
+      animation: fadeIn 3s ease;
+    }
+
+    .about h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #00bfff;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes slideInUp {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .buttons a {
+        width: 80%;
+        padding: 12px;
+      }
     }
   </style>
 </head>
-<body>
 
-  <!-- 🔄 Loading Spinner -->
-  <div id="loader">
+<body onload="playWelcome(); hidePreloader();">
+
+  <!-- Preloader -->
+  <div id="preloader">
     <div class="spinner"></div>
   </div>
 
-  <!-- 🔊 Optional Sound -->
-  <audio id="intro-sound" src="intro-sound.mp3" preload="auto"></audio>
+  <!-- Main content -->
+  <div class="container">
+    <!-- Bank Logo -->
+    <img src="IMG_2525.jpeg" alt="Topfan Bank Logo" class="logo">
 
-  <!-- 🎯 Main Welcome Content -->
-  <div class="main-content" id="main">
-    <img src="topfan-logo.png" alt="Topfan Bank Logo" class="logo" />
+    <!-- Welcome text -->
     <h1>Welcome to Topfan Bank</h1>
-    <p>Your trusted and secure online banking solution. Manage your finances with confidence.</p>
-    <div class="button-group">
-      <a href="login.html" class="button">Login</a>
-      <a href="TopfanMainMenu.html" class="button">Go to Dashboard</a>
+    <p class="slogan">Trusted and Secured Online Bank for Your Future</p>
+
+    <!-- Navigation Buttons -->
+    <div class="buttons">
+      <a href="login.html">Login</a>
+      <a href="TopfanMainMenu.html">Dashboard</a>
     </div>
-    <footer>© 2025 Topfan Bank. All rights reserved.</footer>
+
+    <!-- Bank Explanation -->
+    <div class="about">
+      <h2>About Topfan Bank</h2>
+      <p>
+        Topfan Bank is a modern, secure, and user-centered digital banking platform designed to serve individuals and businesses with simplicity and trust. 
+        <br><br>
+        We offer comprehensive banking features like savings, checking, transfers, debit/credit card management, statements, and bill payments — all from a powerful and intuitive dashboard.
+        <br><br>
+        Our system ensures your transactions are encrypted and your data is protected with two-factor authentication and the latest online security standards. 
+        <br><br>
+        At Topfan Bank, we don’t just store your money — we empower your future. Start banking smarter today.
+      </p>
+    </div>
   </div>
 
-  <!-- ⚙️ Scripts -->
-  <script>
-    window.addEventListener('load', () => {
-      // Hide loader
-      document.getElementById('loader').style.display = 'none';
+  <!-- Welcome audio -->
+  <audio id="welcomeAudio" autoplay>
+    <source src="welcome.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
 
-      // Play intro sound
-      const sound = document.getElementById('intro-sound');
-      sound.play().catch(() => {
-        // Autoplay blocked by browser, require user interaction
-        console.log('Intro sound muted by browser.');
-      });
-    });
+  <!-- JavaScript -->
+  <script>
+    function hidePreloader() {
+      setTimeout(() => {
+        document.getElementById("preloader").style.display = "none";
+      }, 1500);
+    }
+
+    function playWelcome() {
+      const audio = document.getElementById("welcomeAudio");
+      if (audio) {
+        audio.play().catch(err => console.warn("Autoplay failed:", err));
+      }
+    }
   </script>
 </body>
 </html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Topfan Bank</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <style>
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #preloader .loader {
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #00bcd4;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      background: url('IMG_2494.jpeg.JPG') center/cover no-repeat;
+      height: 100vh;
+      color: white;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      background: #00bcd4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin: 10px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #0097a7;
+    }
+
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      margin-bottom: 20px;
+      font-size: 2em;
+      color: #333;
+    }
+
+    .section p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1em;
+      color: #555;
+    }
+
+    .map-placeholder {
+      width: 100%;
+      height: 300px;
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #111;
+      color: #aaa;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #ccc;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .language-select {
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 2em; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="preloader">
+  <div class="loader"></div>
+</div>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-content" data-aos="fade-up">
+    <h1>Welcome to Topfan Bank</h1>
+    <p>Your financial future starts here.</p>
+    <a href="login.html" class="btn">Login</a>
+    <a href="register.html" class="btn">Open Account</a>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section" data-aos="fade-up">
+  <h2>About Topfan Bank</h2>
+  <p>We are committed to providing secure and innovative financial services to help you grow.</p>
+</section>
+
+<!-- App -->
+<section class="section" data-aos="fade-up">
+  <h2>Bank on the Go</h2>
+  <p>Download our mobile app for seamless banking anywhere, anytime.</p>
+</section>
+
+<!-- Alerts -->
+<section class="section" data-aos="fade-up">
+  <h2>Live Alerts</h2>
+  <p>Stay updated with real-time financial alerts and news.</p>
+</section>
+
+<!-- Financial Tools -->
+<section class="section" data-aos="fade-up">
+  <h2>Smart Financial Tools</h2>
+  <p>Budget planner, savings goals, and calculators to plan your future.</p>
+</section>
+
+<!-- Education Center -->
+<section class="section" data-aos="fade-up">
+  <h2>Education Center</h2>
+  <p>Learn how to manage money, credit, and plan for retirement.</p>
+</section>
+
+<!-- Careers -->
+<section class="section" data-aos="fade-up">
+  <h2>Careers</h2>
+  <p>Join Topfan Bank and build a rewarding future with us.</p>
+</section>
+
+<!-- Branch Hours -->
+<section class="section" data-aos="fade-up">
+  <h2>Branch Hours & Holidays</h2>
+  <p>Our branches are open Monday–Friday from 9am to 5pm.</p>
+</section>
+
+<!-- Service Charges -->
+<section class="section" data-aos="fade-up">
+  <h2>Service Charges</h2>
+  <p>Transparent and simple pricing with no hidden fees.</p>
+</section>
+
+<!-- Security Center -->
+<section class="section" data-aos="fade-up">
+  <h2>Security Center</h2>
+  <p>Your data is protected with industry-grade encryption and security layers.</p>
+</section>
+
+<!-- Map -->
+<section class="section" data-aos="fade-up">
+  <h2>Find a Branch</h2>
+  <div class="map-placeholder">[ Google Maps Placeholder ]</div>
+</section>
+
+<!-- Testimonials -->
+<section class="section" data-aos="fade-up">
+  <h2>What Our Customers Say</h2>
+  <p>“Topfan Bank has changed the way I manage my finances!” – Jane D.</p>
+</section>
+
+<!-- Language Selector -->
+<section class="section" data-aos="fade-up">
+  <h2>Choose Your Language</h2>
+  <div class="language-select">
+    <select>
+      <option>English</option>
+      <option>Spanish</option>
+      <option>French</option>
+      <option>German</option>
+    </select>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section" data-aos="fade-up">
+  <h2>Contact Us</h2>
+  <p>Have questions? Reach out to our support team or subscribe for updates.</p>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Topfan Bank. All rights reserved.</p>
+  <div>
+    <a href="#">Privacy Policy</a> |
+    <a href="#">Terms of Use</a> |
+    <a href="#">Support</a>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+  // Preloader
+  window.onload = () => {
+    document.getElementById('preloader').style.display = 'none';
+  };
+</script>
+</body>
+</html>

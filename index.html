@@ -3,258 +3,206 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Topfan Bank - Welcome</title>
+  <title>Topfan Bank | Your Trusted Partner</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Segoe UI', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f5f5f5;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    body.dark {
-      background: #121212;
-      color: #f5f5f5;
-    }
-
-    header {
-      background: #003366;
+      background: #111;
       color: #fff;
-      padding: 20px;
-      text-align: center;
+    }
+    header {
+      height: 100vh;
+      background: url('your-background.jpg') no-repeat center center/cover;
       position: relative;
     }
-
-    .hero {
-      background: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d1') center/cover no-repeat;
-      color: white;
-      padding: 100px 20px;
-      text-align: center;
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
     }
-
+    .hero {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      top: 40%;
+      padding: 20px;
+    }
     .hero h1 {
       font-size: 3em;
+      color: #fff;
     }
-
+    .hero p {
+      font-size: 1.3em;
+      margin: 20px auto;
+      max-width: 600px;
+    }
     .hero a {
-      display: inline-block;
-      margin: 20px;
-      padding: 10px 20px;
-      background: #00b894;
+      background: #00bcd4;
       color: white;
+      padding: 12px 24px;
       text-decoration: none;
+      margin: 10px;
+      display: inline-block;
       border-radius: 5px;
     }
-
     section {
-      padding: 60px 20px;
+      padding: 80px 20px;
       max-width: 1200px;
       margin: auto;
     }
-
-    .features, .footer-columns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
     }
-
-    .feature, .footer-column {
-      flex: 1 1 250px;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .dark .feature, .dark .footer-column {
+    .box {
       background: #1e1e1e;
-      color: #ddd;
+      padding: 25px;
+      border-radius: 8px;
+      transition: 0.3s ease;
     }
-
-    footer {
-      background: #101820;
-      color: #fff;
-      padding: 50px 20px;
+    .box:hover {
+      transform: translateY(-10px);
     }
-
-    footer h4 {
-      margin-bottom: 10px;
-    }
-
-    footer ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    footer a {
-      color: #ddd;
-      text-decoration: none;
-    }
-
-    .preloader {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10000;
-    }
-
-    .loader {
-      border: 6px solid #ccc;
-      border-top: 6px solid #003366;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    .dark-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #003366;
-      color: white;
-      padding: 10px;
-      cursor: pointer;
-      z-index: 9999;
-    }
-
-    .ticker {
-      background: #ffcc00;
-      padding: 10px;
-      color: #000;
-      font-weight: bold;
+    h2 {
       text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5em;
+      color: #00bcd4;
+    }
+    .footer {
+      background-color: #0d0d0d;
+      color: #ccc;
+      padding: 60px 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+    .footer h4 {
+      color: #00bcd4;
+      margin-bottom: 15px;
+    }
+    .footer a {
+      display: block;
+      color: #aaa;
+      text-decoration: none;
+      margin: 5px 0;
+    }
+    .footer a:hover {
+      color: #fff;
+    }
+    .newsletter {
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+    .newsletter input {
+      width: 70%;
+      padding: 12px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    .newsletter button {
+      padding: 12px 20px;
+      background: #00bcd4;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer p {
+      text-align: center;
+      margin-top: 40px;
     }
   </style>
 </head>
-
 <body>
-  <div class="preloader" id="preloader">
-    <div class="loader"></div>
-  </div>
 
-  <div class="dark-toggle" onclick="document.body.classList.toggle('dark')">Toggle Dark Mode</div>
-
-  <header>
-    <h1>Topfan Bank</h1>
-    <div><a href="login.html" style="color:#fff; margin-right:20px;">Login</a><a href="register.html" style="color:#fff;">Register</a></div>
-  </header>
-
-  <div class="ticker">💱 USD to EUR: 0.92 | GBP to USD: 1.29 | JPY to USD: 0.0070</div>
-
-  <section class="hero">
+<header>
+  <div class="hero">
     <h1>Welcome to Topfan Bank</h1>
-    <p>Your global financial partner</p>
-    <a href="#about">Learn More</a>
-    <a href="#open">Open Account</a>
-  </section>
+    <p>Your secure digital banking partner – trusted by thousands globally.</p>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+  </div>
+</header>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Topfan Bank offers innovative banking solutions, security, and services that empower individuals and businesses globally.</p>
-  </section>
+<section>
+  <h2>Our Core Services</h2>
+  <div class="features">
+    <div class="box"><h3>Online Banking</h3><p>Access your bank anytime, anywhere.</p></div>
+    <div class="box"><h3>Mobile App</h3><p>Download our powerful app for smart banking.</p></div>
+    <div class="box"><h3>Quick Transfers</h3><p>Send money instantly to anyone, securely.</p></div>
+    <div class="box"><h3>Open New Account</h3><p>Choose between checking, savings or business.</p></div>
+    <div class="box"><h3>Loan Center</h3><p>Get flexible personal and business loans.</p></div>
+    <div class="box"><h3>Investment Plans</h3><p>Grow your wealth with expert-backed plans.</p></div>
+    <div class="box"><h3>Insurance Coverage</h3><p>Protect your family, car, home, and more.</p></div>
+    <div class="box"><h3>Live Exchange Rates</h3><p>Get real-time FX updates and conversions.</p></div>
+  </div>
+</section>
 
-  <section>
-    <h2>Our Services</h2>
-    <div class="features">
-      <div class="feature"><h4>Open Account</h4><p>Start banking with us in minutes.</p></div>
-      <div class="feature"><h4>ATM Locator</h4><p>Find branches and ATMs near you.</p></div>
-      <div class="feature"><h4>Global Access</h4><p>Bank anywhere with our mobile app.</p></div>
-      <div class="feature"><h4>Secure Login</h4><p>Safe, fast and reliable access.</p></div>
+<section>
+  <h2>Customer Reviews</h2>
+  <p style="max-width:700px; margin:auto; text-align:center;">
+    “Amazing digital service. Super responsive app.” – Kelly<br><br>
+    “Topfan’s savings interest is unbeatable!” – Marcus<br><br>
+    “Their 24/7 support saved my day.” – Lila
+  </p>
+</section>
+
+<section class="newsletter">
+  <h2 style="text-align:center;">Subscribe to Our Newsletter</h2>
+  <form style="text-align:center;">
+    <input type="email" placeholder="Enter your email" required />
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
+
+<div class="footer">
+  <div class="footer-grid">
+    <div>
+      <h4>Company</h4>
+      <a href="#">About Us</a>
+      <a href="#">Leadership</a>
+      <a href="#">Careers</a>
     </div>
-  </section>
-
-  <section>
-    <h2>Mobile App</h2>
-    <p>Bank from your smartphone — download from the stores below.</p>
-    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Apple_logo_black.svg/60px-Apple_logo_black.svg.png" alt="iOS"></a>
-    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" width="40" alt="Android"></a>
-  </section>
-
-  <section>
-    <h2>Testimonials</h2>
-    <div class="features">
-      <div class="feature"><p>"Topfan is the best bank I've ever used."</p>— Jane D.</div>
-      <div class="feature"><p>"Secure and easy online banking."</p>— Michael A.</div>
-      <div class="feature"><p>"Global reach and great support."</p>— Fatima K.</div>
+    <div>
+      <h4>Products</h4>
+      <a href="#">Accounts</a>
+      <a href="#">Loans</a>
+      <a href="#">Credit Cards</a>
     </div>
-  </section>
-
-  <section>
-    <h2>Subscribe to Newsletter</h2>
-    <form>
-      <input type="email" placeholder="Your email" required />
-      <button type="submit">Subscribe</button>
-    </form>
-  </section>
-
-  <footer>
-    <div class="footer-columns">
-      <div class="footer-column">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#">Open Account</a></li>
-          <li><a href="#">Branches</a></li>
-          <li><a href="#">Rates</a></li>
-          <li><a href="#">Careers</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="#">Help Center</a></li>
-          <li><a href="#">Live Chat</a></li>
-          <li><a href="#">Security Tips</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Apps</h4>
-        <a href="#">iOS</a> | <a href="#">Android</a>
-      </div>
-      <div class="footer-column">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Languages</h4>
-        <select>
-          <option>English</option>
-          <option>Spanish</option>
-          <option>French</option>
-        </select>
-      </div>
-      <div class="footer-column">
-        <h4>Hours</h4>
-        <p>Mon–Fri: 9am–6pm<br>Sat: 9am–1pm</p>
-      </div>
+    <div>
+      <h4>Support</h4>
+      <a href="#">Help Center</a>
+      <a href="#">Security</a>
+      <a href="#">Report Fraud</a>
     </div>
-    <hr style="margin: 40px 0;">
-    <p style="text-align:center;">&copy; 2025 Topfan Bank. All Rights Reserved.</p>
-  </footer>
+    <div>
+      <h4>Legal</h4>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Disclosures</a>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+  <p>&copy; 2025 Topfan Bank. All rights reserved.</p>
+</div>
 
-  <script>
-    window.addEventListener("load", () => {
-      document.getElementById("preloader").style.display = "none";
-    });
-  </script>
 </body>
 </html>

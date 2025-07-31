@@ -211,7 +211,40 @@
   </div>
 </section>
 
+<!-- Hero Section with Slogan -->
+<section style="background-image: url('your-hero-image.jpg'); background-size: cover; background-position: center; height: 300px; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;" data-aos="fade-up">
+  <h1 style="color: white; font-size: 38px; text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">
+    Welcome to Topfan Bank
+  </h1>
+  <p style="color: white; font-size: 20px; text-shadow: 1px 1px 6px rgba(0,0,0,0.6);">
+    Your Trust, Our Priority
+  </p>
+</section>
 
+<!-- Mission Statement -->
+<section style="padding: 40px 20px; text-align: center;" data-aos="fade-up">
+  <p style="font-size: 22px; font-style: italic;">
+    “Empowering communities through modern, secure, and innovative banking.”
+  </p>
+</section>
+
+<!-- Animated Statistics Section -->
+<section style="padding: 40px 0; background: #f9f9f9; text-align: center;">
+  <div style="display: flex; justify-content: center; gap: 40px;" data-aos="fade-up">
+    <div>
+      <h2 class="counter" data-target="10000">0</h2>
+      <p>Happy Customers</p>
+    </div>
+    <div>
+      <h2 class="counter" data-target="250000000">0</h2>
+      <p>Total Transactions</p>
+    </div>
+    <div>
+      <h2 class="counter" data-target="12">0</h2>
+      <p>Branches Worldwide</p>
+    </div>
+  </div>
+</section>
   
     <!-- About Section -->
   <div style="height: 800px;"></div>
@@ -492,6 +525,32 @@
 </script> 
 
  <div style="height: 1000px;"></div> 
+
+  <script>
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const increment = target / 200; // speed
+      if (count < target) {
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(updateCount, 20);
+      } else {
+        counter.innerText = target.toLocaleString();
+      }
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        updateCount();
+        observer.unobserve(counter);
+      }
+    }, { threshold: 0.5 });
+
+    observer.observe(counter);
+  });
+</script>
 </body>
 </html>
   

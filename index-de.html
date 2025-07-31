@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -69,11 +68,11 @@
   <section class="features">
     <div class="feature">
       <h3>Girokonto</h3>
-      <p>Sehen Sie Ihr Guthaben und Ihre Aktivitäten in Echtzeit.</p>
+      <p>Überprüfen Sie Ihr Guthaben und Ihre Aktivitäten in Echtzeit.</p>
     </div>
     <div class="feature">
       <h3>Sparkonto</h3>
-      <p>Verwalten Sie Ihre Ersparnisse mit attraktiven Zinssätzen.</p>
+      <p>Verfolgen Sie Ihre Ersparnisse mit wettbewerbsfähigen Zinssätzen.</p>
     </div>
     <div class="feature">
       <h3>Online-Zahlungen</h3>
@@ -105,29 +104,3 @@
 
 </body>
 </html>
-
-
-<section class="lang-section">
-  <label for="lang">🌍 Language:</label>
-  <select id="lang" onchange="changeLanguage(this)">
-    <option value="index-en.html">🇺🇸 English</option>
-    <option value="index-es.html">🇪🇸 Spanish</option>
-    <option value="index-fr.html">🇫🇷 French</option>
-    <option value="index-de.html">🇩🇪 German</option>
-  </select>
-</section>
-
-<script>
-  function changeLanguage(select) {
-    window.location.href = select.value;
-  }
-
-  // Auto-select current page
-  const current = window.location.pathname;
-  const langSelect = document.getElementById("lang");
-  for (let option of langSelect.options) {
-    if (current.includes(option.value)) {
-      option.selected = true;
-    }
-  }
-</script>

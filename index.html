@@ -97,33 +97,6 @@
 
    
 
-   body.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
-}
-
-.dark-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: #444;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 9999;
-}
-
-body.dark-mode a {
-  color: #00c6ff;
-}
-
-body.dark-mode .section,
-body.dark-mode .footer {
-  background-color: #1f1f1f;
-} 
-
 .contact-float {
   position: fixed;
   bottom: 80px;
@@ -199,8 +172,7 @@ body.dark-mode .footer {
     <div></div>
   </div>
 
-  <!-- Dark/Light Mode Toggle -->
-  <div class="toggle-mode" onclick="toggleDarkMode()">Toggle Mode</div>
+ 
 
   <!-- Hero Section -->
   <section class="background">
@@ -329,17 +301,7 @@ body.dark-mode .footer {
     <p style="text-align: center; margin-top: 30px;">&copy; 2025 Topfan Bank. All rights reserved.</p>
   </footer>
 
-  <!-- Scripts -->
-  <script>
-    // Preloader
-    window.addEventListener("load", () => {
-      document.querySelector(".preloader").style.display = "none";
-    });
-<script>
-  function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
-  }
-</script>
+ 
     
 <!-- Contact Us Floating Button -->
 <a href="contact.html" class="contact-float">

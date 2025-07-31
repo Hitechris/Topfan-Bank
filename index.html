@@ -580,6 +580,23 @@
     observer.observe(counter);
   });
 </script>
+
+  <script>
+  document.getElementById("lang").addEventListener("change", function () {
+    const lang = this.value;
+
+    // Example: Redirect to a different language version
+    if (lang === "es") {
+      window.location.href = "index_es.html"; // Spanish version
+    } else if (lang === "fr") {
+      window.location.href = "index_fr.html"; // French version
+    } else if (lang === "de") {
+      window.location.href = "index_de.html"; // German version
+    } else {
+      window.location.href = "index.html"; // English default
+    }
+  });
+</script>
 </body>
 </html>
   

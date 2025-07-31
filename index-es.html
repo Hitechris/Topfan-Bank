@@ -12,4 +12,13 @@
   function changeLanguage(select) {
     window.location.href = select.value;
   }
+
+  // Auto-select current page
+  const current = window.location.pathname;
+  const langSelect = document.getElementById("lang");
+  for (let option of langSelect.options) {
+    if (current.includes(option.value)) {
+      option.selected = true;
+    }
+  }
 </script>

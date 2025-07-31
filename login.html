@@ -118,10 +118,27 @@
     .dark-mode .login-container {
       background-color: #222;
     }
+
+    <style>
+  .menu-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+
+  .menu-button:hover {
+    background-color: #0056b3;
+  }
+</style>
   </style>
 </head>
 <body>
-
+<a href="index.html" class="menu-button">Go to Main Menu</a>
   <button class="dark-toggle" onclick="toggleDarkMode()">🌓 Mode</button>
 
   <div class="login-container">

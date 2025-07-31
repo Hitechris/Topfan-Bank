@@ -1,1 +1,71 @@
 
+<!-- confirmation.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transfer Confirmation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .confirmation-box {
+      background: white;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: left;
+      max-width: 400px;
+      width: 100%;
+    }
+    .confirmation-box h2 {
+      color: green;
+      margin-bottom: 20px;
+    }
+    .confirmation-box p {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    strong {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="confirmation-box">
+    <h2>✅ Transfer Successful</h2>
+    <p><strong>From:</strong> <span id="from"></span></p>
+    <p><strong>To:</strong> <span id="to"></span></p>
+    <p><strong>Account #:</strong> <span id="accNum"></span></p>
+    <p><strong>Amount:</strong> $<span id="amount"></span></p>
+    <p><strong>Transaction ID:</strong> <span id="txnId"></span></p> 
+  <p><strong>Date:</strong> <span id="date"></span></p>
+
+<p style="text-align: center; margin-top: 20px;">
+  <a href="transfer.html">
+    <button style="padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      ← Back to Transfer
+    </button>
+  </a>
+</p>
+</p> 
+  </div>
+
+  <script>
+    const query = new URLSearchParams(window.location.search);
+
+    document.getElementById("from").textContent = query.get("from");
+    document.getElementById("to").textContent = query.get("to");
+    document.getElementById("accNum").textContent = query.get("accNum");
+    document.getElementById("amount").textContent = parseFloat(query.get("amount")).toFixed(2);
+    document.getElementById("txnId").textContent = query.get("txnId");
+    document.getElementById("date").textContent = query.get("date");
+  </script>
+</body>
+</html>

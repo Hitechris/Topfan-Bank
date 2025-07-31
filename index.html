@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Topfan Bank - Welcome</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f4f4f4;
+      color: #333;
+      transition: 0.3s ease;
+    }
+
+    body.dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+
+    .preloader {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .preloader div {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #3b82f6;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .background {
+      background: url('CDDE7C4B-767A-4466-A5D7-BE2BC37768FC.jpeg') no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      color: #fff;
+      text-align: center;
+      z-index: 2;
+      padding: 60px 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .hero-content a {
+      text-decoration: none;
+      padding: 12px 25px;
+      background: #3b82f6;
+      color: white;
+      border-radius: 5px;
+      margin: 0 10px;
+      transition: 0.3s;
+    }
+
+    .hero-content a:hover {
+      background: #2563eb;
+    }
+
+    .toggle-mode {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 10000;
+      background: #3b82f6;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+.contact-float {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #0077cc;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 25px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.chat-support-box {
+  position: fixed;
+  bottom: 130px;
+  right: 20px;
+  width: 250px;
+  background: white;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  display: none; /* You can toggle this on click */
+}
+
+.loan-apply, .newsletter-banner, .lang-section {
+  padding: 50px 20px;
+  text-align: center;
+  background: #f3f4f6;
+  margin-top: 40px;
+}
+
+.loan-apply h2,
+.newsletter-banner h2 {
+  margin-bottom: 10px;
+}
+
+.newsletter-banner input {
+  padding: 10px;
+  width: 250px;
+  margin-right: 10px;
+}
+
+.sticky-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #0a0a23;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.sticky-bottom-bar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-end {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: #aaa;
+  font-size: 14px;
+}
+    
+  </style>
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div></div>
+  </div>
+
+  <!-- Dark/Light Mode Toggle -->
+  <div class="toggle-mode" onclick="toggleDarkMode()">Toggle Mode</div>
+
+  <!-- Hero Section -->
+  <section class="background">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Welcome to Topfan Bank</h1>
+      <p>Your trusted financial partner for savings, investments and a brighter future.</p>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+    </div>
+  </section>
+
+    <!-- About Section -->
+  <section style="padding: 60px 20px; text-align: center;">
+    <h2>About Topfan Bank</h2>
+    <p style="max-width: 800px; margin: 20px auto;">
+      At Topfan Bank, we are committed to providing a secure, simple, and innovative digital banking experience. Whether you're managing your personal savings or growing a business, we have you covered.
+    </p>
+    <a href="about.html" style="margin-top: 20px; display: inline-block;">Learn More</a>
+  </section>
+
+  <!-- Services Section -->
+  <section style="padding: 60px 20px; background: #e2e8f0;">
+    <h2 style="text-align: center;">Our Services</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-top: 40px;">
+      <div style="width: 250px; background: white; padding: 20px; border-radius: 10px;">
+        <h3>Mobile Banking</h3>
+        <p>Bank on-the-go with our secure mobile app.</p>
+      </div>
+      <div style="width: 250px; background: white; padding: 20px; border-radius: 10px;">
+        <h3>Savings Accounts</h3>
+        <p>Earn interest and save smarter for the future.</p>
+      </div>
+      <div style="width: 250px; background: white; padding: 20px; border-radius: 10px;">
+        <h3>Loans & Credit</h3>
+        <p>Flexible options to support your needs.</p>
+      </div>
+      <div style="width: 250px; background: white; padding: 20px; border-radius: 10px;">
+        <h3>ATM Locator</h3>
+        <p>Find nearby ATMs easily with our locator tool.</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 30px;">
+      <a href="services.html">See All Services</a>
+    </div>
+  </section>
+
+  <!-- Exchange Rate Ticker -->
+  <section style="background: #1e3a8a; color: white; padding: 15px; font-weight: bold; text-align: center;">
+    <marquee behavior="scroll" direction="left">
+      USD/NGN: 1350 | GBP/USD: 1.28 | EUR/USD: 1.10 | BTC/USD: $63,000 | ETH/USD: $3,200
+    </marquee>
+  </section>
+
+  <!-- App Promo -->
+  <section style="padding: 60px 20px; background: #f1f5f9; text-align: center;">
+    <h2>Download Our App</h2>
+    <p>Get access to all banking features in your pocket.</p>
+    <div style="margin-top: 20px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" alt="Google Play" width="150" style="margin: 10px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Download_on_the_App_Store_Badge.svg/512px-Download_on_the_App_Store_Badge.svg.png" alt="App Store" width="150" style="margin: 10px;">
+    </div>
+  </section>
+
+    <!-- Testimonials -->
+  <section style="padding: 60px 20px; background: #fff; text-align: center;">
+    <h2>What Our Customers Say</h2>
+    <div style="max-width: 1000px; margin: 40px auto; display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+      <div style="flex: 1; min-width: 280px; background: #f9fafb; padding: 20px; border-radius: 10px;">
+        <p>"Topfan Bank makes banking so easy and accessible. Love the mobile app!"</p>
+        <strong>- Sarah T.</strong>
+      </div>
+      <div style="flex: 1; min-width: 280px; background: #f9fafb; padding: 20px; border-radius: 10px;">
+        <p>"Their customer support is fast and helpful. Highly recommended."</p>
+        <strong>- James O.</strong>
+      </div>
+      <div style="flex: 1; min-width: 280px; background: #f9fafb; padding: 20px; border-radius: 10px;">
+        <p>"I love the simplicity and security. Everything just works!"</p>
+        <strong>- Chiamaka U.</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section style="padding: 50px 20px; background: #e2e8f0; text-align: center;">
+    <h2>Subscribe to Our Newsletter</h2>
+    <p>Get banking tips, news, and updates right in your inbox.</p>
+    <form style="margin-top: 20px;">
+      <input type="email" placeholder="Enter your email" style="padding: 10px; width: 250px; border-radius: 5px; border: 1px solid #ccc;">
+      <button type="submit" style="padding: 10px 20px; border: none; background: #2563eb; color: white; border-radius: 5px; cursor: pointer;">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background: #1e293b; color: white; padding: 40px 20px;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1100px; margin: auto;">
+      <div style="flex: 1; min-width: 200px;">
+        <h3>Topfan Bank</h3>
+        <p>Secure. Reliable. Modern Banking.</p>
+      </div>
+      <div style="flex: 1; min-width: 200px;">
+        <h4>Quick Links</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="login.html" style="color: white;">Login</a></li>
+          <li><a href="register.html" style="color: white;">Register</a></li>
+          <li><a href="about.html" style="color: white;">About Us</a></li>
+          <li><a href="services.html" style="color: white;">Services</a></li>
+        </ul>
+      </div>
+      <div style="flex: 1; min-width: 200px;">
+        <h4>Support</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="contact.html" style="color: white;">Contact</a></li>
+          <li><a href="#" style="color: white;">FAQs</a></li>
+          <li><a href="#" style="color: white;">Help Center</a></li>
+        </ul>
+      </div>
+      <div style="flex: 1; min-width: 200px;">
+        <h4>Legal</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="#" style="color: white;">Terms of Use</a></li>
+          <li><a href="#" style="color: white;">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 30px;">&copy; 2025 Topfan Bank. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Preloader
+    window.addEventListener("load", () => {
+      document.querySelector(".preloader").style.display = "none";
+    });
+
+    // Dark mode toggle
+    const toggle = document.getElementById("dark-mode-toggle");
+    toggle.onclick = () => {
+      document.body.classList.toggle("dark-mode");
+    };
+  </script>
+<!-- Contact Us Floating Button -->
+<a href="contact.html" class="contact-float">
+  📞 Contact Us
+</a>
+
+<!-- Chat Support Section -->
+<div class="chat-support-box">
+  <h3>💬 Live Support</h3>
+  <p>Hi there! Need help? Chat with us now.</p>
+  <input type="text" placeholder="Type a message..." />
+  <button>Send</button>
+</div>
+
+<!-- Loan Application Teaser -->
+<section class="loan-apply">
+  <h2>Apply for Personal or Business Loans</h2>
+  <p>Low rates. Instant approval. No hidden fees.</p>
+  <a href="loan.html" class="btn-primary">Apply Now</a>
+</section>
+
+<!-- Newsletter Banner -->
+<section class="newsletter-banner">
+  <h2>Get Bank Updates & Promos</h2>
+  <form>
+    <input type="email" placeholder="Enter your email" required />
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
+
+<!-- Language Selector -->
+<section class="lang-section">
+  <label for="lang">🌍 Language:</label>
+  <select id="lang">
+    <option value="en">🇺🇸 English</option>
+    <option value="es">🇪🇸 Spanish</option>
+    <option value="fr">🇫🇷 French</option>
+    <option value="de">🇩🇪 German</option>
+  </select>
+</section>
+
+<!-- Sticky Bottom Bar -->
+<div class="sticky-bottom-bar">
+  <a href="home.html">🏠 Home</a>
+  <a href="services.html">🛠 Services</a>
+  <a href="login.html">🔐 Login</a>
+  <a href="contact.html">📞 Help</a>
+</div>
+
+<!-- Footer Copyright -->
+<footer class="footer-end">
+  <p>&copy; 2025 Topfan Bank. All rights reserved.</p>
+</footer>
+
+ <!-- Map Section -->
+<section class="map-location">
+  <h2>Find a Branch Near You</h2>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</section>
+
+<!-- Currency Converter -->
+<section class="currency-converter">
+  <h2>Currency Converter</h2>
+  <input type="number" id="amount" placeholder="Amount in USD" />
+  <button onclick="convertCurrency()">Convert</button>
+  <p id="converted"></p>
+</section>
+
+<!-- Auto Image Slider -->
+<section class="image-slider">
+  <h2>Explore Our Features</h2>
+  <div class="slider-container">
+    <img src="https://source.unsplash.com/featured/?banking" id="slider-img" />
+  </div>
+</section>
+
+<!-- Animated Graph Bars -->
+<section class="bar-graph">
+  <h2>Our Growth</h2>
+  <div class="bar bar1">60%</div>
+  <div class="bar bar2">80%</div>
+  <div class="bar bar3">95%</div>
+</section>
+
+<!-- Animated Stats Counter -->
+<section class="stats">
+  <div>
+    <h3 id="clients">0</h3>
+    <p>Happy Clients</p>
+  </div>
+  <div>
+    <h3 id="branches">0</h3>
+    <p>Branches</p>
+  </div>
+  <div>
+    <h3>
+</body>
+</html>
+  

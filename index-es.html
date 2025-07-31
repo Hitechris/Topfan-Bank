@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Topfan Bank - Página de Inicio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      function changeLanguage(select) {
+        const selectedLang = select.value;
+        window.location.href = selectedLang;
+      }
+    </script>
+  </head>
+  <body>
+    <div id="preloader">
+      <div class="loader-ring"></div>
+    </div>
+
+    <header>
+      <nav class="navbar">
+        <div class="logo">Topfan Bank</div>
+        <ul class="nav-links">
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#features">Servicios</a></li>
+          <li><a href="#testimonials">Testimonios</a></li>
+          <li><a href="#contact">Contacto</a></li>
+          <li>
+            <select onchange="changeLanguage(this)">
+              <option value="index.html" selected>Español</option>
+              <option value="index-en.html">English</option>
+              <option value="index-fr.html">Français</option>
+              <option value="index-de.html">Deutsch</option>
+            </select>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+      <div class="hero-content">
+        <h1>Bienvenido a Topfan Bank</h1>
+        <p>Una banca moderna, segura y diseñada para ti.</p>
+        <div class="hero-buttons">
+          <a href="#features" class="btn btn-primary">Explorar Servicios</a>
+          <a href="dashboard.html" class="btn btn-secondary">Ir al Panel</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features-section">
+      <h2 class="section-title">Nuestros Servicios Destacados</h2>
+      <div class="features-grid">
+        <div class="feature-box" onclick="window.location.href='checking.html'">
+          <h3>Cuenta Corriente</h3>
+          <p>Gestiona tus gastos diarios sin complicaciones.</p>
+        </div>
+        <div class="feature-box" onclick="window.location.href='savings.html'">
+          <h3>Cuenta de Ahorros</h3>
+          <p>Ahorra con confianza y seguridad.</p>
+        </div>
+        <div class="feature-box" onclick="window.location.href='loans.html'">
+          <h3>Préstamos</h3>
+          <p>Obtén préstamos accesibles para tus necesidades.</p>
+        </div>
+        <div class="feature-box" onclick="window.location.href='cards.html'">
+          <h3>Tarjetas</h3>
+          <p>Solicita tarjetas de crédito y débito sin complicaciones.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials-section">
+      <h2 class="section-title">Lo que Dicen Nuestros Clientes</h2>
+      <div class="testimonial">
+        <p>"Topfan Bank transformó mi forma de ahorrar y gastar. ¡La aplicación es increíble!"</p>
+        <span>– Juan Pérez</span>
+      </div>
+      <div class="testimonial">
+        <p>"El servicio al cliente es excelente. Siempre están ahí para ayudar."</p>
+        <span>– Ana López</span>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2 class="section-title">Contáctanos</h2>
+      <p>¿Tienes preguntas o necesitas ayuda? ¡Estamos aquí para ayudarte!</p>
+      <a href="mailto:soporte@topfanbank.com" class="btn btn-primary">Enviar un Correo</a>
+    </section>
+
+    <section class="download-section">
+      <h2 class="section-title">Descarga Nuestra Aplicación</h2>
+      <p>Disponible en todas las plataformas móviles.</p>
+      <div class="download-buttons">
+        <a href="#" class="btn btn-secondary">Google Play</a>
+        <a href="#" class="btn btn-secondary">App Store</a>
+      </div>
+    </section>
+
+    <section class="map-section">
+      <h2 class="section-title">Encuentra una Sucursal Cercana</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3..."
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+      ></iframe>
+    </section>
+
+    <footer class="main-footer">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Sobre Nosotros</h3>
+          <p>Topfan Bank proporciona soluciones bancarias digitales para todos.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Enlaces Rápidos</h3>
+          <ul>
+            <li><a href="#">Política de Privacidad</a></li>
+            <li><a href="#">Términos de Servicio</a></li>
+            <li><a href="#">Centro de Ayuda</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Síguenos</h3>
+          <ul class="social-icons">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Topfan Bank. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <script>
+      window.addEventListener("load", () => {
+        document.getElementById("preloader").style.display = "none";
+      });
+    </script>
+  </body>
+</html>

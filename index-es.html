@@ -1,3 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bienvenido a Topfan Bank</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('hero.jpg') no-repeat center center/cover;
+      color: #fff;
+    }
+    .lang-section {
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    header h1 {
+      font-size: 2.5rem;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .feature {
+      background: #111;
+      padding: 1.5rem;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="lang-section">
+    <label for="lang">🌍 Idioma:</label>
+    <select id="lang" onchange="changeLanguage(this)">
+      <option value="index-en.html">🇺🇸 Inglés</option>
+      <option value="index-es.html">🇪🇸 Español</option>
+      <option value="index-fr.html">🇫🇷 Francés</option>
+      <option value="index-de.html">🇩🇪 Alemán</option>
+    </select>
+  </section>
+
+  <header>
+    <h1>Bienvenido a Topfan Bank</h1>
+    <p>Su socio confiable para servicios bancarios modernos y seguros.</p>
+  </header>
+
+  <section class="features">
+    <div class="feature">
+      <h3>Cuenta Corriente</h3>
+      <p>Consulte su saldo y actividad en tiempo real.</p>
+    </div>
+    <div class="feature">
+      <h3>Ahorros</h3>
+      <p>Controle sus ahorros con tasas competitivas.</p>
+    </div>
+    <div class="feature">
+      <h3>Pagos en línea</h3>
+      <p>Pague facturas y transfiera dinero fácilmente.</p>
+    </div>
+    <div class="feature">
+      <h3>Soporte 24/7</h3>
+      <p>Estamos aquí para ayudarle en cualquier momento.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Topfan Bank. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    function changeLanguage(select) {
+      window.location.href = select.value;
+    }
+
+    const current = window.location.pathname;
+    const langSelect = document.getElementById("lang");
+    for (let option of langSelect.options) {
+      if (current.includes(option.value)) {
+        option.selected = true;
+      }
+    }
+  </script>
+
+</body>
+</html>
+
 <section class="lang-section">
   <label for="lang">🌍 Language:</label>
   <select id="lang" onchange="changeLanguage(this)">

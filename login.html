@@ -2,170 +2,149 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Topfan Bank - Secure Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Topfan Bank</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
   <style>
-    * {
+    body {
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
+      background-image: url('IMG_2494.jpeg'); /* Your background */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
     }
 
-    body {
-      background: url('images/background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      min-height: 100vh;
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 0;
+    }
+
+    .login-container {
+      position: relative;
+      z-index: 1;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      backdrop-filter: blur(4px);
+      justify-content: center;
+      height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     }
 
     .login-box {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 40px;
-      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 30px;
+      border-radius: 15px;
       max-width: 400px;
-      border-radius: 12px;
-      box-shadow: 0 0 30px rgba(0, 201, 167, 0.3);
-      color: #fff;
-    }
-
-    .login-box .logo {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .login-box .logo img {
-      max-width: 120px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     }
 
     .login-box h2 {
-      text-align: center;
-      color: #00c9a7;
-      margin-bottom: 20px;
-      font-size: 24px;
+      margin-bottom: 25px;
+      font-weight: 600;
     }
 
     .form-group {
       margin-bottom: 20px;
+      text-align: left;
     }
 
     .form-group label {
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 5px;
       font-size: 14px;
-      color: #ccc;
     }
 
     .form-group input {
       width: 100%;
       padding: 12px;
-      border-radius: 6px;
       border: none;
-      background: #222;
-      color: #fff;
-      font-size: 15px;
+      border-radius: 8px;
+      font-size: 16px;
     }
 
-    .checkbox {
-      display: flex;
-      align-items: center;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    .checkbox input {
-      margin-right: 10px;
+    .form-group input:focus {
+      outline: none;
+      box-shadow: 0 0 5px #4fc3f7;
     }
 
     .login-btn {
-      width: 100%;
-      padding: 12px;
-      background: #00c9a7;
-      color: #fff;
-      font-size: 16px;
+      background-color: #2196f3;
+      color: white;
       border: none;
-      border-radius: 6px;
-      font-weight: bold;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      width: 100%;
       cursor: pointer;
-      transition: 0.3s;
+      transition: background-color 0.3s ease;
     }
 
     .login-btn:hover {
-      background: #00a78f;
+      background-color: #1e88e5;
     }
 
-    .forgot-link {
-      text-align: center;
+    .extra-links {
       margin-top: 15px;
-    }
-
-    .forgot-link a {
-      color: #00c9a7;
-      text-decoration: none;
       font-size: 14px;
     }
 
-    .forgot-link a:hover {
+    .extra-links a {
+      color: #90caf9;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .extra-links a:hover {
       text-decoration: underline;
     }
 
-    .footer {
-      text-align: center;
-      font-size: 13px;
-      margin-top: 30px;
-      color: #888;
-    }
-
-    @media (max-width: 480px) {
+    @media screen and (max-width: 480px) {
       .login-box {
-        padding: 25px;
-      }
-
-      .login-box h2 {
-        font-size: 20px;
+        padding: 20px;
       }
     }
   </style>
 </head>
 <body>
-
-  <div class="login-box">
-    <div class="logo">
-      <!-- Add your logo below if available -->
-      <!-- <img src="images/logo.png" alt="Topfan Bank Logo"> -->
-    </div>
-    <h2>Login to Topfan Bank</h2>
-    <form action="verify.html" method="POST">
-      <div class="form-group">
-        <label for="username">Username or Email</label>
-        <input type="text" id="username" name="username" placeholder="e.g. admin@example.com" required>
+  <div class="overlay"></div>
+  <div class="login-container">
+    <img src="topfan-logo.png" alt="Topfan Bank Logo" class="logo" />
+    <div class="login-box">
+      <h2>Welcome Back</h2>
+      <form action="dashboard.html" method="POST">
+        <div class="form-group">
+          <label for="email">Email or Username</label>
+          <input type="text" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit" class="login-btn">Login</button>
+      </form>
+      <div class="extra-links">
+        <a href="forgot-password.html">Forgot Password?</a> |
+        <a href="register.html">Register</a>
       </div>
-
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Enter password" required>
+      <div class="extra-links" style="margin-top: 10px;">
+        <a href="index.html">← Back to Home</a>
       </div>
-
-      <div class="checkbox">
-        <input type="checkbox" id="remember">
-        <label for="remember">Remember me</label>
-      </div>
-
-      <button class="login-btn" type="submit">Login</button>
-
-      <div class="forgot-link">
-        <a href="forgot-password.html">Forgot your password?</a>
-      </div>
-    </form>
-
-    <div class="footer">
-      &copy; 2025 Topfan Bank. All rights reserved.
     </div>
   </div>
-
 </body>
 </html>

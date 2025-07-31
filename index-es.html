@@ -1,1 +1,292 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Topfan Bank - Bienvenido</title>
+  ...
+</head>
+<body>
+<!-- Preloader -->
+<div class="preloader" id="preloader">
+  <div></div>
+</div>
+
+<!-- Selector de idioma -->
+<div style="position: absolute; top: 20px; right: 20px; z-index: 999;">
+  <select id="langSelect" onchange="location = this.value;" style="padding: 6px; border-radius: 6px;">
+    <option value="index.html">English</option>
+    <option value="index-fr.html">Français</option>
+    <option value="index-es.html" selected>Español</option>
+    <option value="index-de.html">Deutsch</option>
+  </select>
+</div>
+
+<!-- Sección hero -->
+<section class="hero">
+  <img src="topfanlogo.JPG" alt="Logo de Topfan Bank" class="logo" data-aos="zoom-in">
+  <h1 data-aos="fade-up" data-aos-delay="100">Bienvenido a Topfan Bank</h1>
+  <p data-aos="fade-up" data-aos-delay="200">Tu socio financiero de confianza para ahorros, préstamos y transferencias</p>
+  <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+    <a href="login.html" class="btn">Iniciar Sesión</a>
+    <a href="register.html" class="btn">Registrarse</a>
+  </div>
+</section>
+
+<section style="background-image: url('hero.jpg'); background-size: cover; background-position: center; height: 300px; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;" data-aos="fade-up">
+  <h1 style="color: white; font-size: 38px; text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">
+    <!-- opcional: texto vacío -->
+  </h1>
+  <p style="color: white; font-size: 20px; text-shadow: 1px 1px 6px rgba(0,0,0,0.6);">
+    <!-- opcional: texto vacío -->
+  </p>
+</section>
+
+<!-- Sección de características -->
+<section class="features-section" id="features">
+  <div class="container">
+    <h2 data-aos="fade-up">Funciones de Topfan Bank</h2>
+    <div class="features-grid">
+
+      <a href="savings.html" class="feature-box" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-piggy-bank"></i>
+        <h3>Cuenta de Ahorros</h3>
+        <p>Asegura y haz crecer tu dinero con intereses competitivos.</p>
+      </a>
+
+      <a href="checking.html" class="feature-box" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-wallet"></i>
+        <h3>Cuenta Corriente</h3>
+        <p>Accede fácilmente a tu dinero para la banca diaria.</p>
+      </a>
+
+      <a href="loans.html" class="feature-box" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-hand-holding-usd"></i>
+        <h3>Préstamos</h3>
+        <p>Planes de préstamo flexibles adaptados a tus necesidades.</p>
+      </a>
+
+      <a href="cards.html" class="feature-box" data-aos="fade-up" data-aos-delay="400">
+        <i class="fas fa-credit-card"></i>
+        <h3>Tarjetas Bancarias</h3>
+        <p>Accede a tu cuenta con tarjetas débito y crédito seguras.</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- Sección Acerca de -->
+<section style="padding: 60px 20px; text-align: center;" data-aos="fade-up">
+  <h2 data-aos="fade-up" data-aos-delay="100">Acerca de Topfan Bank</h2>
+  <p data-aos="fade-up" data-aos-delay="200" style="max-width: 800px; margin: 20px auto;">
+    En Topfan Bank, estamos comprometidos a ofrecer una experiencia bancaria segura y fluida...
+  </p>
+  <a data-aos="fade-up" data-aos-delay="300" href="about.html" style="margin-top: 20px;">Más Información</a>
+</section>
+
+<!-- Sección de Servicios -->
+<section style="padding: 60px 20px; background: #e2e8f0;">
+  <h2 style="text-align: center;">Nuestros Servicios</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-top: 40px;">
+    <div style="width: 250px; background: white; padding: 20px; border-radius: 10px;">
+      <h3>Banca Móvil</h3>
+      <p>Opera tu banco desde cualquier lugar con nuestra app segura.</p>
+    </div>
+    <div style="width: 250px; background: white; padding: 20px; border-radius: 10px;">
+      <h3>Cuentas de Ahorros</h3>
+      <p>Gana intereses y ahorra inteligentemente para el futuro.</p>
+    </div>
+    <div style="width: 250px; background: white; padding: 20px; border-radius: 10px;">
+      <h3>Préstamos y Crédito</h3>
+      <p>Opciones flexibles para respaldar tus necesidades.</p>
+    </div>
+    <div style="width: 250px; background: white; padding: 20px; border-radius: 10px;">
+      <h3>Localizador de Cajeros</h3>
+      <p>Encuentra cajeros cercanos fácilmente con nuestra herramienta.</p>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 30px;">
+    <a href="services.html">Ver Todos los Servicios</a>
+  </div>
+</section>
+
+<!-- Ticker de tipo de cambio -->
+<section style="background: #1e3a8a; color: white; padding: 15px; font-weight: bold; text-align: center;">
+  <marquee behavior="scroll" direction="left">
+    USD/CAD: 1.38 | GBP/USD: 1.28 | EUR/USD: 1.10 | BTC/USD: $63,000 | ETH/USD: $3,200
+  </marquee>
+</section>
+
+<!-- Promoción de app -->
+<section style="padding: 60px 20px; background: #f1f5f9; text-align: center;">
+  <h2>Descarga Nuestra App</h2>
+  <p>Accede a todas las funciones bancarias desde tu dispositivo.</p>
+  <div style="margin-top: 20px;">
+    <img src="..." alt="Google Play" width="150" style="margin: 10px;">
+    <img src="..." alt="App Store" width="150" style="margin: 10px;">
+  </div>
+</section>
+
+<!-- Testimonios -->
+<section style="padding: 60px 20px; background: #fff; text-align: center;">
+  <h2>Lo que dicen nuestros clientes</h2>
+  <div style="max-width: 1000px; margin: 40px auto; display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+    <div style="flex: 1; min-width: 280px; background: #f9fafb; padding: 20px; border-radius: 10px;">
+      <p>"Topfan Bank hace que la banca sea fácil y accesible. ¡Me encanta la app móvil!"</p>
+      <strong>– Sarah T.</strong>
+    </div>
+    <div style="flex: 1; min-width: 280px; background: #f9fafb; padding: 20px; border-radius: 10px;">
+      <p>"Su atención al cliente es rápida y útil. Muy recomendable."</p>
+      <strong>– James O.</strong>
+    </div>
+    <div style="flex: 1; min-width: 280px; background: #f9fafb; padding: 20px; border-radius: 10px;">
+      <p>"Me encanta la simplicidad y seguridad. ¡Todo funciona!"</p>
+      <strong>– Chiamaka U.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section style="padding: 50px 20px; background: #e2e8f0; text-align: center;">
+  <h2>Suscríbete a nuestro boletín</h2>
+  <p>Recibe consejos bancarios, noticias y actualizaciones en tu correo.</p>
+  <form style="margin-top: 20px;">
+    <input type="email" placeholder="Introduce tu correo electrónico" style="padding: 10px; width: 250px; border-radius: 5px; border: 1px solid #ccc;">
+    <button type="submit" style="padding: 10px 20px; border: none; background: #2563eb; color: white; border-radius: 5px; cursor: pointer;">Suscribirse</button>
+  </form>
+</section>
+
+<!-- Pie de página -->
+<footer style="background: #1e293b; color: white; padding: 40px 20px;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1100px; margin: auto;">
+    <div style="flex: 1; min-width: 200px;">
+      <h3>Topfan Bank</h3>
+      <p>Seguro. Fiable. Banca moderna.</p>
+    </div>
+    <div style="flex: 1; min-width: 200px;">
+      <h4>Enlaces rápidos</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="login.html" style="color: white;">Iniciar Sesión</a></li>
+        <li><a href="register.html" style="color: white;">Registrarse</a></li>
+        <li><a href="about.html" style="color: white;">Sobre Nosotros</a></li>
+        <li><a href="services.html" style="color: white;">Servicios</a></li>
+      </ul>
+    </div>
+    <div style="flex: 1; min-width: 200px;">
+      <h4>Soporte</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="contact.html" style="color: white;">Contacto</a></li>
+        <li><a href="#" style="color: white;">Preguntas Frecuentes</a></li>
+        <li><a href="#" style="color: white;">Centro de Ayuda</a></li>
+      </ul>
+    </div>
+    <div style="flex: 1; min-width: 200px;">
+      <h4>Legal</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="#" style="color: white;">Términos de Uso</a></li>
+        <li><a href="#" style="color: white;">Política de Privacidad</a></li>
+      </ul>
+    </div>
+  </div>
+  <p style="text-align: center; margin-top: 30px;">&copy; 2025 Topfan Bank. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Botón flotante de contacto -->
+<a href="contact.html" class="contact-float">
+  📞 Contáctanos
+</a>
+
+<!-- Chat de soporte -->
+<div class="chat-support-box">
+  <h3>💬 Soporte en Vivo</h3>
+  <p>¡Hola! ¿Necesitas ayuda? Chatea con nosotros ahora.</p>
+  <input type="text" placeholder="Escribe un mensaje..." />
+  <button>Enviar</button>
+</div>
+
+<!-- Teaser para solicitud de préstamo -->
+<section class="loan-apply">
+  <h2>Solicita préstamos personales o comerciales</h2>
+  <p>Bajas tasas. Aprobación instantánea. Sin cargos ocultos.</p>
+  <a href="loan.html" class="btn-primary">Solicitar Ahora</a>
+</section>
+
+<!-- Banner del boletín -->
+<section class="newsletter-banner">
+  <h2>Recibe actualizaciones y promociones</h2>
+  <form>
+    <input type="email" placeholder="Introduce tu correo electrónico" required />
+    <button type="submit">Suscribirse</button>
+  </form>
+</section>
+
+<!-- Barra inferior fija -->
+<div class="sticky-bottom-bar">
+  <a href="index.html">🏠 Inicio</a>
+  <a href="services.html">🛠 Servicios</a>
+  <a href="login.html">🔐 Iniciar Sesión</a>
+  <a href="contact.html">📞 Ayuda</a>
+</div>
+
+<!-- Pie de página final -->
+<footer class="footer-end">
+  <p>&copy; 2025 Topfan Bank. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Sección conecta -->
+<section style="background: #0f172a; color: white; padding: 40px 20px; text-align: center;">
+  <h2>Mantente Conectado</h2>
+  <p>Síguenos en redes sociales para estar al día con las últimas novedades y ofertas</p>
+  <div style="margin: 20px 0;">
+    <a href="#" style="color: white; margin: 0 15px;"><i class="fab fa-facebook fa-2x"></i></a>
+    <a href="#" style="color: white; margin: 0 15px;"><i class="fab fa-twitter fa-2x"></i></a>
+    <a href="#" style="color: white; margin: 0 15px;"><i class="fab fa-instagram fa-2x"></i></a>
+    <a href="#" style="color: white; margin: 0 15px;"><i class="fab fa-linkedin fa-2x"></i></a>
+  </div>
+  <form style="margin-top: 20px;">
+    <input type="email" placeholder="Introduce tu correo electrónico" style="padding: 10px; width: 250px; border-radius: 5px; border: none; margin-right: 10px;">
+    <button type="submit" style="padding: 10px 20px; border: none; background: #3b82f6; color: white; border-radius: 5px;">Suscribirse</button>
+  </form>
+</section>
+
+<!-- Sección asistencia -->
+<section style="background: #1e40af; color: white; padding: 50px 20px; text-align: center;">
+  <h2>¿Necesitas ayuda?</h2>
+  <p>Llama a nuestra línea de atención 24/7 o visita nuestra sucursal más cercana.</p>
+  <p style="font-size: 1.5em; font-weight: bold;">📞 1‑800‑TOPFAN‑BANK</p>
+  <a href="contact.html" style="margin-top: 20px; display: inline-block; background: #10b981; padding: 12px 25px; color: white; text-decoration: none; border-radius: 5px;">Contáctanos</a>
+</section>
+
+<section style="background: #f9fafb; padding: 40px 20px; text-align: center;">
+  <h2>Disponible en tu idioma</h2>
+  <select style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+    <option>English</option>
+    <option>Español</option>
+    <option>Français</option>
+    <option>Deutsch</option>
+    <option>العربية</option>
+  </select>
+  <p style="margin-top: 20px;">Descarga nuestra app móvil en tu idioma local:</p>
+  <img src="..." alt="Google Play" width="150" style="margin: 10px;">
+  <img src="..." alt="App Store" width="150" style="margin: 10px;">
+</section>
+
+<section style="background: #0f172a; color: white; padding: 40px 20px;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-around; text-align: center;">
+    <div>
+      <h3>📍Estados Unidos de América</h3>
+      <p>Minnesota</p>
+      <p>Lun–Vie: 8 am–6 pm</p>
+    </div>
+    <div>
+      <h3>📧 Escríbenos</h3>
+      <p>support@topfanbank.com</p>
+    </div>
+    <div>
+      <h3>📞 Llámanos</h3>
+      <p>+1 320 316 3892</p>
+    </div>
+  </div>
+</section>

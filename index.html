@@ -251,6 +251,27 @@
   <div class="preloader" id="preloader">
     <div></div>
   </div>
+
+ </div> <!-- End of preloader -->
+
+<!-- 🌐 Language Switcher Dropdown -->
+<div style="position: absolute; top: 20px; right: 20px; z-index: 999;">
+  <select id="langSelect" onchange="location = this.value;" style="padding: 6px; border-radius: 6px;">
+    <option value="index.html">English</option>
+    <option value="index-fr.html">Français</option>
+    <option value="index-es.html">Español</option>
+    <option value="index-de.html">Deutsch</option>
+  </select>
+</div>
+
+<script>
+  // Auto-select current language file
+  const current = window.location.pathname.split("/").pop();
+  document.getElementById("langSelect").value = current;
+</script>
+
+<!-- hero section -->
+<section class="hero">
   <!-- hero section --><!-- hero section -->
 <section class="hero">
   <img src="topfanlogo.JPG" alt="Topfan Bank Logo" class="logo" data-aos="zoom-in">

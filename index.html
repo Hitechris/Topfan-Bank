@@ -63,46 +63,84 @@
       background: rgba(0, 0, 0, 0.5);
     }
 
+   }
+
+    .hero {
+      background-image: url('6D9FF306-DFA7-47E7-B598-8AA600ED1C00.jpeg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
     .hero-content {
       position: relative;
-      color: #fff;
-      text-align: center;
       z-index: 2;
-      padding: 60px 20px;
+      max-width: 800px;
+      padding: 20px;
     }
 
-    .hero-content h1 {
-      font-size: 3em;
+    .logo {
+      width: 130px;
+      height: auto;
       margin-bottom: 20px;
+      display: block;
+      border-radius: 15px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .hero-content p {
-      font-size: 1.2em;
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
       margin-bottom: 30px;
+      line-height: 1.5;
     }
 
-    .hero-content a {
+    .hero-buttons a {
       text-decoration: none;
-      padding: 12px 25px;
-      background: #3b82f6;
+      background-color: #1e90ff;
       color: white;
-      border-radius: 5px;
+      padding: 12px 30px;
+      border-radius: 6px;
       margin: 0 10px;
-      transition: 0.3s;
+      transition: background 0.3s;
+      font-size: 16px;
+      display: inline-block;
     }
 
-    .hero-content a:hover {
-      background: #2563eb;
+    .hero-buttons a:hover {
+      background-color: #0c70d4;
     }
 
- .logo {
-  width: 120px;
-  height: auto;
-  margin: 20px auto;
-  display: block;
-  border-radius: 10px;
-}
-
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+      .hero-buttons a {
+        display: block;
+        margin: 10px auto;
+      }
+    }
+  </style
 .contact-float {
   position: fixed;
   bottom: 80px;
@@ -178,24 +216,19 @@
     <div></div>
   </div>
 
- 
-
-  <!-- Hero Section -->
-  <section class="background">
+  <!-- hero section -->
+   <section class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
-
-        <h1>Welcome to Topfan Bank</h1>
-      <p>Your trusted financial partner for savings, investments and a brighter future.</p>
-    
-    <!-- ✅ Add this line below -->
-         <img src="IMG_2525.jpeg" alt="Topfan Bank Logo" class="logo">
-    
-      <a href="login.html">Login</a>
-      <a href="register.html">Register</a>
+      <img src="6D9FF306-DFA7-47E7-B598-8AA600ED1C00.jpeg" alt="Topfan Bank Logo" class="logo">
+      <h1>Welcome to Topfan Bank</h1>
+      <p>Your trusted financial partner for savings, investments, and a brighter future.</p>
+      <div class="hero-buttons">
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+      </div>
     </div>
   </section>
-
     <!-- About Section -->
   <section style="padding: 60px 20px; text-align: center;">
     <h2>About Topfan Bank</h2>

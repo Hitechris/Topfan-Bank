@@ -67,7 +67,7 @@
 
   <section class="features">
     <div class="feature">
-      <h3>Vérification de compte</h3>
+      <h3>Compte courant</h3>
       <p>Consultez vos soldes et activités en temps réel.</p>
     </div>
     <div class="feature">
@@ -104,29 +104,3 @@
 
 </body>
 </html>
-
-
-<section class="lang-section">
-  <label for="lang">🌍 Language:</label>
-  <select id="lang" onchange="changeLanguage(this)">
-    <option value="index-en.html">🇺🇸 English</option>
-    <option value="index-es.html">🇪🇸 Spanish</option>
-    <option value="index-fr.html">🇫🇷 French</option>
-    <option value="index-de.html">🇩🇪 German</option>
-  </select>
-</section>
-
-<script>
-  function changeLanguage(select) {
-    window.location.href = select.value;
-  }
-
-  // Auto-select current page
-  const current = window.location.pathname;
-  const langSelect = document.getElementById("lang");
-  for (let option of langSelect.options) {
-    if (current.includes(option.value)) {
-      option.selected = true;
-    }
-  }
-</script>
